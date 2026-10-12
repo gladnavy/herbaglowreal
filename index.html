@@ -1,0 +1,1531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="HerbaGlow — thoughtfully made herbal haircare from Malaysia. Shampoos, conditioner, hair oil, Hair Growth Serum and Gold Oil.">
+<link rel="icon" type="image/png" href="img/logo-emblem.png">
+<style>[hidden]{display:none!important}body{margin:0}</style>
+<title>HerbaGlow — Nature Beauty Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..700&family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+/* Layout concept: a morning-lit herb apothecary. Arched label windows (from the bottle labels) frame film, products and herbs; a
+   scalp-compass rail rides the left edge; deep forest green carries actions, gold marks moments of care. Single light theme by choice. */
+:root{
+  color-scheme: light;
+  --paper:#FBF9F0; --ivory:#F4F0DF; --linen:#ECE6CF; --sage:#C9D3B2; --sage-soft:#E6EBD8;
+  --forest:#1D5A35; --forest-deep:#123B23; --olive:#6F7E3B; --gold:#B5842A; --gold-soft:#EBD6A6;
+  --lavender:#7B68A8; --lav-soft:#E9E4F3; --blush:#F0D6CC; --ink:#1E271F; --muted:#59634F; --line:#DCD6BE;
+  --ok:#2F7A46; --warn:#A2611B; --err:#A63A2B;
+  --display:"Playfair Display", "Iowan Old Style", Georgia, serif;
+  --body:"Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --arch:999px 999px 22px 22px;
+  --r:14px;
+  --shadow:0 18px 40px -22px rgba(18,59,35,.45);
+  --wrap:1220px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.65;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;line-height:1.12;margin:0;text-wrap:balance;color:var(--forest-deep)}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.eyebrow{font:600 11.5px/1.2 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.lede{font-size:clamp(16px,1.4vw,18px);color:var(--muted);max-width:60ch}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:14px 24px;font-weight:600;font-size:14.5px;letter-spacing:.02em;text-decoration:none;transition:transform .2s,background .2s,box-shadow .2s}
+.btn-primary{background:var(--forest);color:#FBF9F0;box-shadow:var(--shadow)}
+.btn-primary:hover{background:var(--forest-deep);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--forest-deep);border:1.5px solid var(--forest)}
+.btn-ghost:hover{background:var(--sage-soft)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:#9A6F1F}
+.btn-sm{padding:9px 16px;font-size:13px}
+.btn[disabled]{opacity:.45;pointer-events:none}
+section{padding-block:clamp(64px,8vw,112px)}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px)}
+.sec-head h2{font-size:clamp(30px,4vw,48px)}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* preview ribbon */
+.ribbon{background:var(--forest-deep);color:#EFE9D2;font-size:12.5px;text-align:center;padding:8px 16px;letter-spacing:.02em}
+.ribbon b{color:var(--gold-soft);font-weight:600}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(251,249,240,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:20px;height:78px}
+.logo{display:flex;align-items:center;flex:none}
+.logo img{height:60px;width:auto}
+.nav-links{display:flex;gap:4px;margin-left:auto;list-style:none;padding:0;margin-block:0}
+.nav-links a{display:block;padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:500;font-size:14px;color:var(--ink)}
+.nav-links a:hover{background:var(--sage-soft)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{position:relative;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center}
+.icon-btn:hover{background:var(--sage-soft)}
+.icon-btn svg{width:20px;height:20px}
+.badge{position:absolute;top:-3px;right:-3px;min-width:20px;height:20px;border-radius:10px;background:var(--gold);color:#fff;font:700 11px/20px var(--body);text-align:center;padding:0 5px}
+.menu-btn{display:none}
+@media (max-width:980px){
+  .nav-links{display:none;position:absolute;top:78px;left:0;right:0;flex-direction:column;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 16px 20px;margin:0}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 14px;font-size:16px}
+  .menu-btn{display:grid}
+  .nav-actions{margin-left:auto}
+  .logo img{height:44px}
+}
+
+/* hero */
+.hero{padding-block:clamp(36px,5vw,72px) clamp(56px,7vw,96px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -10% -40% 30%;height:80%;background:radial-gradient(closest-side,var(--sage-soft),transparent);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(38px,4.8vw,64px);font-weight:600;letter-spacing:-.01em;margin-block:18px 22px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--olive)}
+.hero .lede{margin-bottom:30px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.trust span{display:flex;align-items:center;gap:8px}
+.trust svg{width:18px;height:18px;color:var(--olive);flex:none}
+.film{position:relative;justify-self:center;width:min(100%,460px)}
+.film-arch{position:relative;border-radius:var(--arch);overflow:hidden;aspect-ratio:4/5;background:var(--linen);box-shadow:0 40px 80px -40px rgba(18,59,35,.6);outline:1.5px solid var(--gold-soft);outline-offset:10px}
+.film-arch video{width:100%;height:100%;object-fit:cover}
+.film-ctrl{position:absolute;right:16px;bottom:16px;width:42px;height:42px;border-radius:50%;border:0;background:rgba(251,249,240,.88);display:grid;place-items:center}
+.film-ctrl svg{width:16px;height:16px;color:var(--forest-deep)}
+.orbit{position:absolute;display:flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px;font-size:12.5px;font-weight:600;box-shadow:var(--shadow);animation:float 6s ease-in-out infinite;white-space:nowrap}
+.orbit img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.orbit i{font-family:var(--display);font-weight:500;color:var(--muted);font-size:12px}
+.o1{top:12%;left:-18%}.o2{top:42%;right:-16%;animation-delay:-2s}.o3{bottom:10%;left:-12%;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-10px)}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.film{width:min(100%,380px)}.o1{left:-4%}.o2{right:-4%}.o3{left:0}}
+@media (max-width:480px){.orbit{font-size:11px;padding:4px 10px 4px 4px}.orbit img{width:24px;height:24px}.orbit i{display:none}}
+
+/* marquee */
+.marquee{background:var(--forest);color:#EFE9D2;overflow:hidden;padding-block:16px}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:scroll 38s linear infinite;font-family:var(--display);font-size:20px;font-style:italic}
+.marquee-track span{display:flex;align-items:center;gap:44px}
+.marquee-track span::after{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold-soft)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* scalp compass (home teaser) */
+.compass{background:var(--ivory)}
+.compass-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.scalp-types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.scalp{all:unset;box-sizing:border-box;cursor:pointer;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:10px;transition:transform .2s,border-color .2s,box-shadow .2s}
+.scalp:hover,.scalp:focus-visible{transform:translateY(-3px);border-color:var(--forest);box-shadow:var(--shadow)}
+.scalp h3{font-size:21px}
+.scalp p{font-size:13.5px;color:var(--muted);line-height:1.55}
+.scalp .go{font-size:12.5px;font-weight:600;color:var(--forest)}
+.scalp-glyph{width:54px;height:54px}
+@media (max-width:860px){.compass-grid{grid-template-columns:1fr}}
+@media (max-width:420px){.scalp-types{grid-template-columns:1fr}}
+
+/* shop */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:9px 16px;font-size:13.5px;font-weight:500}
+.chip:hover{border-color:var(--forest)}
+.chip[aria-pressed="true"]{background:var(--forest-deep);border-color:var(--forest-deep);color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{display:flex;flex-direction:column;background:var(--paper);border-radius:22px;border:1px solid var(--line);overflow:hidden;transition:box-shadow .25s,transform .25s}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.card-img{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--linen);border:0;padding:0;width:100%}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.card:hover .card-img img{transform:scale(1.04)}
+.tag{position:absolute;top:14px;left:14px;background:var(--paper);color:var(--forest-deep);font:600 11px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:999px}
+.card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-kind{font:600 11px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--olive)}
+.card h3{font-size:22px}
+.card-desc{font-size:13.5px;color:var(--muted);line-height:1.55}
+.bestfor{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.bestfor span{font-size:11.5px;font-weight:600;background:var(--sage-soft);color:var(--forest-deep);border-radius:6px;padding:4px 8px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:12px}
+.price{font-weight:700;font-size:17px;color:var(--forest-deep)}
+.price small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.promo-card{background:var(--forest-deep);border-color:var(--forest-deep);color:#D5D8C4}
+.promo-card h3{color:#FBF9F0;font-size:30px}
+.promo-card .card-body{padding:28px 24px;gap:14px}
+.promo-glyphs{display:flex;gap:8px}.promo-glyphs svg{width:44px;height:44px}
+.empty-note{padding:24px;border:1px dashed var(--line);border-radius:16px;color:var(--muted);text-align:center}
+
+/* routine */
+.routine{background:var(--forest-deep);color:#EAE5CF;position:relative;overflow:hidden}
+.routine h2,.routine h3{color:#FBF9F0}
+.routine .lede{color:#C9CDB6}
+.routine .eyebrow{color:var(--gold-soft)}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.step{border-radius:var(--arch);background:rgba(251,249,240,.06);border:1px solid rgba(235,214,166,.25);padding:clamp(60px,7vw,90px) clamp(22px,3vw,36px) 32px;text-align:center;display:grid;gap:14px;justify-items:center;align-content:start}
+.step-num{font-family:var(--display);font-size:clamp(70px,9vw,120px);line-height:1;height:.9em;color:var(--gold-soft);font-style:italic}
+.step h3{font-size:clamp(26px,3vw,34px)}
+.step p{max-width:38ch;color:#D5D8C4}
+.step-pick{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:6px}
+.step-pick button{border:1px solid rgba(235,214,166,.45);background:transparent;color:#FBF9F0;border-radius:999px;padding:8px 14px;font-size:13px}
+.step-pick button:hover{background:rgba(235,214,166,.15)}
+.extras{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.extra{display:flex;gap:14px;align-items:center;border-radius:16px;background:rgba(251,249,240,.05);border:1px solid rgba(235,214,166,.18);padding:14px}
+.extra img{width:64px;height:80px;object-fit:cover;border-radius:999px 999px 8px 8px;flex:none}
+.extra b{display:block;color:#FBF9F0;font-weight:600}
+.extra span{font-size:13px;color:#C9CDB6}
+@media (max-width:720px){.steps{grid-template-columns:1fr}}
+
+/* herb atlas */
+.atlas{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:start}
+.herb-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.herb-btn{display:flex;gap:12px;align-items:center;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px 6px 6px}
+.herb-btn img{width:44px;height:44px;border-radius:50%;object-fit:cover;flex:none}
+.herb-btn b{display:block;font-weight:600;font-size:14px}
+.herb-btn i{display:block;font-family:var(--display);font-size:12.5px;color:var(--muted)}
+.herb-btn[aria-selected="true"]{background:var(--forest-deep);border-color:var(--forest-deep);color:#FBF9F0}
+.herb-btn[aria-selected="true"] i{color:var(--gold-soft)}
+.specimen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);background:var(--ivory);border-radius:28px;overflow:hidden;border:1px solid var(--line);min-height:420px}
+.specimen-img{position:relative}
+.specimen-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:1}
+.specimen-img .stamp{position:absolute;left:16px;bottom:16px;background:var(--paper);border-radius:999px;padding:6px 12px;font:600 11px/1.2 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--olive)}
+.specimen-body{padding:clamp(22px,3vw,36px);display:grid;gap:14px;align-content:start}
+.specimen-body h3{font-size:clamp(28px,3vw,38px)}
+.latin{font-family:var(--display);font-style:italic;color:var(--olive);font-size:17px;margin-top:-6px}
+.specimen-body dl{display:grid;grid-template-columns:1fr;gap:4px;margin:4px 0 0;font-size:14px}
+.specimen-body dt{font:600 11px/1.9 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.specimen-body dd{margin:0 0 10px}
+.in-products{display:flex;flex-wrap:wrap;gap:8px}
+.in-products button{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:4px 12px 4px 4px;font-size:12.5px;font-weight:600}
+.in-products img{width:28px;height:28px;border-radius:50%;object-fit:cover}
+.inci{margin-top:28px;border-top:1px solid var(--line)}
+.inci details{border-bottom:1px solid var(--line)}
+.inci summary{cursor:pointer;padding:16px 4px;font-weight:600;display:flex;justify-content:space-between;gap:12px;list-style:none}
+.inci summary::-webkit-details-marker{display:none}
+.inci summary::after{content:"+";font-size:20px;line-height:1;color:var(--olive)}
+.inci details[open] summary::after{content:"–"}
+.inci .inci-body{padding:0 4px 18px;font-size:13.5px;color:var(--muted)}
+.inci .free{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.inci .free span{font-size:11.5px;font-weight:600;border:1px solid var(--line);border-radius:6px;padding:3px 8px;color:var(--forest-deep)}
+@media (max-width:920px){.atlas{grid-template-columns:1fr}.specimen{grid-template-columns:1fr}.specimen-img img{aspect-ratio:16/10}}
+@media (max-width:420px){.herb-list{grid-template-columns:1fr}}
+
+/* results */
+.results{background:var(--ivory)}
+.res-top{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:24px}
+.score{display:flex;align-items:center;gap:14px}
+.score b{font-family:var(--display);font-size:52px;line-height:1;color:var(--forest-deep)}
+.stars{color:var(--gold);letter-spacing:2px;font-size:16px}
+.score small{display:block;color:var(--muted);font-size:12.5px}
+.ba-wall{columns:4 240px;column-gap:16px}
+.ba{break-inside:avoid;margin:0 0 16px;position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);padding:0;display:block;width:100%;background:var(--paper)}
+.ba img{width:100%;height:auto;transition:transform .5s}
+.ba:hover img{transform:scale(1.03)}
+.ba figcaption{display:flex;justify-content:space-between;gap:8px;padding:10px 14px;background:var(--paper);font:600 12px/1.3 var(--body);color:var(--forest-deep);text-align:left}
+.ba figcaption span+span{color:var(--olive)}
+.quotes{overflow:hidden;margin-top:36px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.quote-track{display:flex;gap:16px;width:max-content;animation:scroll 70s linear infinite}
+.quotes:hover .quote-track{animation-play-state:paused}
+.quote{width:340px;flex:none;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px 22px;display:grid;gap:10px;align-content:start}
+.quote p{font-family:var(--display);font-size:16.5px;line-height:1.5;color:var(--ink)}
+.quote footer{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--muted)}
+.quote footer b{color:var(--forest-deep)}
+.disclaim{margin-top:22px;font-size:12.5px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.marquee-track,.quote-track,.orbit{animation:none}.quotes{overflow-x:auto}}
+
+/* story */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}
+.story-img{border-radius:28px;overflow:hidden;aspect-ratio:1024/500;box-shadow:var(--shadow)}
+.story-img img{width:100%;height:100%;object-fit:cover}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.pillar{border-top:2px solid var(--gold);padding-top:14px}
+.pillar b{display:block;font-family:var(--display);font-size:18px;color:var(--forest-deep);margin-bottom:4px}
+.pillar span{font-size:13.5px;color:var(--muted)}
+@media (max-width:860px){.story-grid{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}}
+
+/* support */
+.support{background:var(--sage-soft)}
+.support-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px)}
+.contact-card{background:var(--paper);border-radius:24px;padding:28px;display:grid;gap:16px;align-content:start;border:1px solid var(--line)}
+.contact-row{display:flex;gap:12px;align-items:flex-start;font-size:14px}
+.contact-row svg{width:20px;height:20px;color:var(--forest);flex:none;margin-top:2px}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;padding:0 18px}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--olive);font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding-bottom:16px;color:var(--muted);font-size:14px}
+@media (max-width:860px){.support-grid{grid-template-columns:1fr}}
+
+footer.site{background:var(--forest-deep);color:#CFD3BE;padding-block:56px 40px;font-size:13.5px}
+.foot-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px}
+footer.site h4{font-family:var(--body);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:12px}
+footer.site ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer.site a{text-decoration:none}
+footer.site a:hover{color:#fff}
+.foot-logo{background:var(--paper);border-radius:16px;padding:10px 14px;display:inline-block;margin-bottom:14px}
+.foot-logo img{height:46px}
+.pay-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;padding-top:22px;border-top:1px solid rgba(235,214,166,.2)}
+.pay-row span{border:1px solid rgba(235,214,166,.35);border-radius:6px;padding:4px 10px;font-size:12px}
+@media (max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
+
+/* scalp rail (left edge) */
+.rail{position:fixed;left:0;top:50%;transform:translateY(-50%) rotate(180deg);z-index:45;writing-mode:vertical-rl;white-space:nowrap;background:var(--gold);color:#fff;border:0;border-radius:0 14px 14px 0;padding:18px 11px;font-weight:600;font-size:13px;letter-spacing:.08em;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);border-radius:14px 0 0 14px}
+.rail svg{width:18px;height:18px}
+.rail:hover{background:#9A6F1F}
+.pill-quiz{display:none}
+@media (max-width:760px){
+  .rail{display:none}
+  .pill-quiz{display:flex;position:fixed;left:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;background:var(--gold);color:#fff;border:0;border-radius:999px;padding:13px 18px;font-weight:600;font-size:13.5px;align-items:center;gap:8px;box-shadow:var(--shadow)}
+  .pill-quiz svg{width:18px;height:18px}
+}
+
+/* drawers & modals */
+.scrim{position:fixed;inset:0;background:rgba(18,30,20,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;bottom:0;z-index:70;width:min(460px,100%);background:var(--paper);display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 0 60px rgba(0,0,0,.2);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.left{left:0;transform:translateX(-102%)}
+.drawer.right{right:0;transform:translateX(102%)}
+.drawer.open{transform:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.drawer-head h3{font-size:22px}
+.drawer-body{flex:1;overflow-y:auto;padding:22px}
+.drawer-foot{padding:18px 22px;border-top:1px solid var(--line);display:grid;gap:12px;background:var(--ivory)}
+.x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);display:grid;place-items:center;flex:none}
+.x svg{width:16px;height:16px}
+
+/* quiz */
+.q-progress{display:flex;gap:6px;margin-bottom:22px}
+.q-progress i{flex:1;height:4px;border-radius:4px;background:var(--line)}
+.q-progress i.on{background:var(--gold)}
+.q-count{font:600 11.5px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--olive);margin-bottom:10px}
+.q-title{font-size:26px;margin-bottom:6px}
+.q-help{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:14px;align-items:center;text-align:left;border:1.5px solid var(--line);background:var(--paper);border-radius:16px;padding:14px 16px;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--olive)}
+.opt[aria-pressed="true"]{border-color:var(--forest);background:var(--sage-soft)}
+.opt .ico{width:40px;height:40px;border-radius:50%;background:var(--ivory);display:grid;place-items:center;flex:none;font-size:19px}
+.opt b{display:block;font-weight:600;font-size:14.5px}
+.opt span{display:block;font-size:12.5px;color:var(--muted);line-height:1.45}
+.q-nav{display:flex;justify-content:space-between;gap:10px}
+.result-hero{background:var(--forest-deep);color:#EAE5CF;border-radius:22px;padding:22px;margin-bottom:18px}
+.result-hero .eyebrow{color:var(--gold-soft)}
+.result-hero h4{color:#FBF9F0;font-size:26px;margin:8px 0}
+.result-hero p{font-size:13.5px;color:#D5D8C4}
+.rec{display:grid;grid-template-columns:72px 1fr auto;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.rec img{width:72px;height:90px;object-fit:cover;border-radius:999px 999px 10px 10px}
+.rec .role{font:600 10.5px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--olive)}
+.rec b{display:block;font-family:var(--display);font-size:17px;color:var(--forest-deep);margin:4px 0 2px}
+.rec p{font-size:12.5px;color:var(--muted);line-height:1.45}
+.rec .price{font-size:14.5px}
+
+/* cart */
+.line{display:grid;grid-template-columns:76px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.line img{width:76px;height:95px;object-fit:cover;border-radius:12px}
+.line b{font-family:var(--display);font-size:16.5px;color:var(--forest-deep);display:block}
+.line .meta{font-size:12.5px;color:var(--muted)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;margin-top:8px}
+.qty button{width:32px;height:32px;border:0;background:transparent;font-size:16px}
+.qty output{min-width:24px;text-align:center;font-weight:600;font-size:14px}
+.remove{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;margin-left:10px;padding:0}
+.sumrow{display:flex;justify-content:space-between;font-size:14px}
+.sumrow.total{font-weight:700;font-size:17px;color:var(--forest-deep)}
+.freebar{font-size:12.5px;color:var(--muted)}
+.freebar .bar{height:6px;border-radius:6px;background:var(--line);margin-top:6px;overflow:hidden}
+.freebar .bar i{display:block;height:100%;background:var(--olive);border-radius:6px;transition:width .3s}
+.cart-empty{text-align:center;display:grid;gap:14px;justify-items:center;padding-top:40px;color:var(--muted)}
+
+/* quick view */
+.modal{position:fixed;z-index:70;inset:0;display:grid;place-items:center;padding:16px;pointer-events:none;opacity:0;transition:opacity .25s}
+.modal.open{opacity:1;pointer-events:auto}
+.modal-card{position:relative;background:var(--paper);border-radius:26px;width:min(940px,100%);max-height:calc(100% - 20px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.modal-card > .x{position:absolute;top:14px;right:14px;z-index:2}
+.qv-img{background:var(--linen)}
+.qv-img img{width:100%;height:100%;object-fit:cover}
+.qv-body{padding:clamp(22px,3vw,36px);display:grid;gap:14px;align-content:start}
+.qv-body h3{font-size:clamp(26px,3vw,34px);padding-right:40px}
+.variants{display:flex;flex-wrap:wrap;gap:8px}
+.variant{border:1.5px solid var(--line);background:var(--paper);border-radius:12px;padding:10px 14px;text-align:left;font-size:13px}
+.variant b{display:block;font-size:14px}
+.variant[aria-pressed="true"]{border-color:var(--forest);background:var(--sage-soft)}
+.label{font:600 11px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.qv-add{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.qv-add .qty{margin:0}
+.qv-add .qty button{width:42px;height:46px}
+.howto{font-size:13.5px;color:var(--muted);background:var(--ivory);border-radius:14px;padding:14px 16px}
+@media (max-width:760px){.modal-card{grid-template-columns:1fr}.qv-img img{aspect-ratio:4/3}}
+
+/* lightbox */
+.lightbox .modal-card{grid-template-columns:1fr;width:min(820px,100%);background:var(--paper)}
+.lightbox img{width:100%;height:auto}
+.lightbox p{padding:16px 22px;font-size:14px;color:var(--muted)}
+
+/* checkout */
+.checkout{position:fixed;inset:0;z-index:80;background:var(--paper);overflow-y:auto;display:none;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.checkout.open{display:block}
+.co-top{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px;border-bottom:1px solid var(--line)}
+.co-top .logo img{height:44px}
+.secure{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.secure svg{width:16px;height:16px;color:var(--ok)}
+.stepper{display:flex;gap:6px;list-style:none;padding:0;margin:26px 0 30px;overflow-x:auto}
+.stepper li{flex:1;min-width:84px;font-size:12px;font-weight:600;color:var(--muted);display:grid;gap:8px}
+.stepper li::before{content:"";height:4px;border-radius:4px;background:var(--line)}
+.stepper li.done,.stepper li.cur{color:var(--forest-deep)}
+.stepper li.done::before{background:var(--olive)}
+.stepper li.cur::before{background:var(--gold)}
+.co-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(22px,4vw,56px);padding-bottom:60px;align-items:start}
+.co-main h2{font-size:clamp(26px,3vw,34px);margin-bottom:6px}
+.co-main .sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:grid;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:12.5px;font-weight:600;color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:12px 14px;font-size:15px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--forest)}
+.field .err{font-size:12px;color:var(--err);min-height:0}
+.field.bad input,.field.bad select{border-color:var(--err)}
+.hint{font-size:12px;color:var(--muted)}
+.choice{display:flex;gap:14px;align-items:center;border:1.5px solid var(--line);border-radius:16px;padding:16px;margin-bottom:10px;cursor:pointer;background:#fff}
+.choice:has(input:checked){border-color:var(--forest);background:var(--sage-soft)}
+.choice input{accent-color:var(--forest);width:18px;height:18px;flex:none}
+.choice .c-main{flex:1;min-width:0}
+.choice b{display:block;font-size:14.5px}
+.choice span{font-size:12.5px;color:var(--muted)}
+.choice .c-price{font-weight:700;color:var(--forest-deep)}
+.sub-opts{display:none;padding:4px 0 10px 32px}
+.choice:has(input:checked) + .sub-opts{display:block}
+.wallets{display:flex;flex-wrap:wrap;gap:8px}
+.wallets label{border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;cursor:pointer;background:#fff}
+.wallets label:has(input:checked){border-color:var(--forest);background:var(--sage-soft)}
+.wallets input{position:absolute;opacity:0;pointer-events:none}
+.co-actions{display:flex;justify-content:space-between;gap:12px;margin-top:26px;flex-wrap:wrap}
+.co-side{background:var(--ivory);border-radius:22px;padding:22px;position:sticky;top:20px;display:grid;gap:12px;border:1px solid var(--line)}
+.co-side h3{font-size:20px}
+.mini{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;font-size:13px}
+.mini img{width:52px;height:64px;border-radius:10px;object-fit:cover}
+.mini b{display:block;font-size:13.5px}
+.mini span{color:var(--muted)}
+.promo{display:flex;gap:8px}
+.promo input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff}
+.promo-msg{font-size:12px}
+.review-block{border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px;display:flex;justify-content:space-between;gap:12px;background:#fff}
+.review-block .label{margin-bottom:6px;display:block}
+.review-block p{font-size:14px}
+.link-btn{border:0;background:none;color:var(--forest);font-weight:600;text-decoration:underline;font-size:13px;padding:0;align-self:start}
+.confirm{text-align:center;display:grid;gap:16px;justify-items:center;max-width:620px;margin:20px auto 60px}
+.confirm .seal{width:96px;height:96px;border-radius:50%;background:var(--sage-soft);display:grid;place-items:center}
+.confirm .seal svg{width:44px;height:44px;color:var(--forest)}
+.confirm h2{font-size:clamp(30px,4vw,42px)}
+.ordno{font:700 20px/1 var(--body);letter-spacing:.06em;color:var(--forest-deep);background:var(--ivory);padding:12px 18px;border-radius:12px}
+.track{width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center;font-size:12px;color:var(--muted);margin-top:8px}
+.track div{display:grid;gap:8px;justify-items:center}
+.track i{width:14px;height:14px;border-radius:50%;background:var(--line)}
+.track .on i{background:var(--olive)}
+.track .on{color:var(--forest-deep);font-weight:600}
+.mobile-sum{display:none}
+@media (max-width:860px){
+  .co-grid{grid-template-columns:1fr}
+  .co-side{display:none}
+  .mobile-sum{display:block;background:var(--ivory);border:1px solid var(--line);border-radius:16px;margin-bottom:20px}
+  .mobile-sum summary{padding:14px 16px;font-weight:600;display:flex;justify-content:space-between;list-style:none;cursor:pointer}
+  .mobile-sum .ms-body{padding:0 16px 16px;display:grid;gap:10px}
+  .fields{grid-template-columns:1fr}
+  .co-actions .btn{flex:1}
+  .co-actions{flex-wrap:nowrap}
+  .co-actions .btn-ghost{flex:0 0 auto;padding-inline:18px}
+  .co-actions{position:sticky;bottom:0;background:var(--paper);padding:12px 0 calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);margin-top:20px}
+}
+
+/* chat */
+.chat-fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;height:58px;border-radius:999px;border:0;background:var(--forest);color:#fff;display:flex;align-items:center;gap:10px;padding:0 20px 0 8px;box-shadow:0 14px 34px -10px rgba(18,59,35,.6);font-weight:600;font-size:14px}
+.chat-fab .av{width:44px;height:44px;border-radius:50%;background:var(--paper);display:grid;place-items:center;position:relative}
+.chat-fab .av img{width:36px;height:36px}
+.chat-fab .av::after{content:"";position:absolute;right:0;bottom:2px;width:11px;height:11px;border-radius:50%;background:#4CC46F;border:2px solid var(--forest)}
+.chat{position:fixed;right:18px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:55;width:min(380px,calc(100% - 32px));height:min(560px,calc(100% - 120px));background:var(--paper);border-radius:22px;box-shadow:0 30px 70px -20px rgba(0,0,0,.4);display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px) scale(.98);opacity:0;pointer-events:none;transition:all .25s;border:1px solid var(--line)}
+.chat.open{transform:none;opacity:1;pointer-events:auto}
+.chat-head{background:var(--forest-deep);color:#EAE5CF;padding:16px 18px;display:flex;gap:12px;align-items:center}
+.chat-head .av{width:42px;height:42px;border-radius:50%;background:var(--paper);display:grid;place-items:center;flex:none}
+.chat-head .av img{width:34px}
+.chat-head b{display:block;color:#FBF9F0;font-size:15px}
+.chat-head span{font-size:12px;display:flex;align-items:center;gap:6px}
+.chat-head span::before{content:"";width:8px;height:8px;border-radius:50%;background:#4CC46F}
+.chat-head .x{margin-left:auto;background:transparent;border-color:rgba(235,214,166,.4);color:#FBF9F0}
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--ivory)}
+.msg{max-width:84%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.5}
+.msg.them{background:var(--paper);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:var(--forest);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg small{display:block;font-size:10.5px;opacity:.6;margin-top:4px}
+.typing{align-self:flex-start;display:flex;gap:4px;padding:12px 14px;background:var(--paper);border-radius:16px;border:1px solid var(--line)}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{50%{opacity:.25}}
+.quick{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;border-top:1px solid var(--line);background:var(--paper)}
+.quick button{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:7px 12px;font-size:12.5px;font-weight:500}
+.quick button:hover{border-color:var(--forest)}
+.chat-form{display:flex;gap:8px;padding:10px 12px 12px;background:var(--paper)}
+.chat-form input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:999px;padding:10px 14px}
+.chat-form button{width:42px;height:42px;border-radius:50%;border:0;background:var(--gold);color:#fff;display:grid;place-items:center;flex:none}
+.chat-form svg{width:18px;height:18px}
+@media (max-width:760px){.chat-fab span.t{display:none}.chat-fab{padding:0 7px}}
+
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--forest-deep);color:#fff;border-radius:999px;padding:12px 20px;font-size:14px;z-index:90;opacity:0;pointer-events:none;transition:all .25s;display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast button{border:0;background:none;color:var(--gold-soft);font-weight:700;text-decoration:underline;padding:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* pricing, sets, labels */
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--linen);border-radius:12px;padding:4px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:9px 8px;font-size:12.5px;font-weight:600;color:var(--muted);line-height:1.25}
+.seg button[aria-checked="true"]{background:var(--forest-deep);color:#FBF9F0;box-shadow:var(--shadow)}
+.grid.sets .card-img{aspect-ratio:1/1}
+.grid.sets .save{display:none}
+.qv-img.square{display:flex;align-items:center;background:#EFE6D3}
+.qv-img.square img{height:auto;aspect-ratio:1/1;object-fit:contain}
+.price .now{white-space:nowrap}
+.card-foot .price .was{display:block;margin:2px 0 0;font-size:13px}
+.rec .price{text-align:right}
+.rec .price .was{display:block;margin:2px 0 0}
+.drawer-foot .sumrow.total{flex-wrap:wrap;gap:4px}
+.price .now{font-weight:700;color:var(--forest-deep)}
+.price .was,.rec .was,.sumrow .was{font-weight:500;color:var(--muted);font-size:.82em;margin-left:8px;text-decoration:line-through}
+.save{position:absolute;top:14px;right:14px;background:var(--gold);color:#fff;font:700 12px/1 var(--body);padding:7px 9px;border-radius:999px}
+.qv-price{font-size:24px;display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
+.save-pill{font:600 12px/1 var(--body);background:var(--gold-soft);color:#6B4A10;padding:6px 10px;border-radius:999px;align-self:center}
+.variant s{color:var(--muted);font-size:12px}
+.variant span{display:inline}
+.contains{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:13.5px}
+.contains li{display:flex;gap:8px;align-items:center}
+.contains li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none}
+.benefits{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:6px 14px;font-size:13.5px}
+.benefits li{display:flex;gap:8px;align-items:flex-start}
+.benefits li::before{content:"✓";color:var(--olive);font-weight:700}
+.caution{font-size:13px;background:#FBEEE2;color:#7A4317;border-radius:12px;padding:10px 14px;margin-top:8px}
+.qv-inci{border-top:1px solid var(--line);padding-top:10px}
+.qv-inci summary{cursor:pointer;font-weight:600;font-size:13.5px}
+.qv-inci p{font-size:12.5px;color:var(--muted);margin-top:8px}
+.inci-list{color:var(--ink)}
+.sets-head{display:grid;gap:4px;margin:44px 0 18px}
+.sets-head h3{font-size:clamp(24px,2.6vw,30px)}
+.grid.sets{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.set-card{background:var(--ivory)}
+.opt .tick{margin-left:auto;width:22px;height:22px;border-radius:7px;border:2px solid var(--line);display:grid;place-items:center;font-size:12px;color:transparent;flex:none}
+.opt[aria-pressed="true"] .tick{background:var(--forest);border-color:var(--forest);color:#fff}
+.opt:not(.multi) .tick{border-radius:50%}
+.wa-card{display:grid;gap:10px;background:var(--ivory);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.wa-card b{font-size:18px;color:var(--forest-deep)}
+.chat-wa{display:flex;align-items:center;gap:8px;padding:9px 14px;background:var(--sage-soft);color:var(--forest-deep);font-size:12.5px;text-decoration:none;border-top:1px solid var(--line)}
+.chat-wa svg{width:16px;height:16px;flex:none}
+.contact-row a{color:var(--forest);font-weight:600}
+.sel{user-select:all}
+footer.site p a{text-decoration:underline}
+</style>
+</head>
+<body>
+
+
+<div class="ribbon"><b>Free standard delivery</b> on orders of RM 50 and above · Launch prices on all products</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="HerbaGlow home"><img src="img/logo.png" alt="HerbaGlow — Nature Beauty Care"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#compass" data-quiz>Scalp quiz</a></li>
+      <li><a href="#routine">Routine</a></li>
+      <li><a href="#ingredients">Ingredients</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#story">Our story</a></li>
+      <li><a href="#help">Help</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="cartBtn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="badge tnum" id="cartCount" hidden>0</span>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Nature Beauty Care · Made by formulators</div>
+        <h1>Thoughtfully made haircare. <em>A simpler daily routine.</em></h1>
+        <p class="lede">Discover our shampoos and conditioners, serum, hair oil and Gold Oil. Explore the ingredients, and find the right pair for your hair.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" data-quiz>
+            Find my scalp match
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <a class="btn btn-ghost" href="#shop">Shop haircare</a>
+        </div>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21c-5-3-8-7-8-11a8 8 0 0 1 16 0c0 4-3 8-8 11Z"/><path d="M12 7v8M9 11l3 3 3-3"/></svg>Handmade in small batches</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 19c8 0 14-6 14-14-8 0-14 6-14 14Z"/><path d="M5 19 13 11"/></svg>Indian &amp; Chinese herbs</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="13" height="10" rx="1.5"/><path d="M16 10h3l2 3v4h-5"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>Delivered across Malaysia</span>
+        </div>
+      </div>
+      <div class="film">
+        <div class="film-arch">
+          <video id="film" src="media/herbaglow-film.mp4" poster="media/herbaglow-film-poster.jpg" autoplay muted loop playsinline aria-label="HerbaGlow product film: herbal shampoo, clarifying shampoo, Hi-Flex conditioner, herbal hair oil, Gold Oil and hair serum"></video>
+          <button class="film-ctrl" id="filmCtrl" aria-label="Pause film">
+            <svg id="filmIcon" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          </button>
+        </div>
+        <div class="orbit o1"><img src="img/herb-ginseng.jpg" alt="">Ginseng <i>Panax</i></div>
+        <div class="orbit o2"><img src="img/herb-hibiscus.jpg" alt="">Hibiscus <i>rosa-sinensis</i></div>
+        <div class="orbit o3"><img src="img/herb-amla.jpg" alt="">Amla <i>Phyllanthus</i></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="marquee"></div>
+  </div>
+
+  <!-- SCALP COMPASS TEASER -->
+  <section class="compass" id="compass">
+    <div class="wrap compass-grid">
+      <div class="sec-head">
+        <div class="eyebrow">The Scalp Compass</div>
+        <h2>Know your scalp first. Then choose your pair.</h2>
+        <p class="lede">Four quick questions in plain words. We read how your scalp and hair behave, then suggest only the products that suit them. Strong itching? We connect you straight to our expert on WhatsApp.</p>
+        <div class="cta-row" style="margin-top:8px">
+          <button class="btn btn-gold" data-quiz>Start the 60-second quiz</button>
+        </div>
+      </div>
+      <div class="scalp-types" id="scalpTypes"></div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Shop</div>
+        <h2>Find care for your hair’s needs.</h2>
+      </div>
+      <div class="chips" role="group" aria-label="Filter by need" id="chips"></div>
+      <div class="grid" id="grid"></div>
+      <div id="setsWrap"><div class="sets-head"><h3>Sets &amp; savings</h3><p class="hint">Bundled routines at a lower price than buying each bottle.</p></div><div class="grid sets" id="setGrid"></div></div>
+    </div>
+  </section>
+
+  <!-- ROUTINE -->
+  <section class="routine" id="routine">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Routine</div>
+        <h2>Two steps, clearly explained.</h2>
+        <p class="lede">Cleanse with shampoo, then condition according to your hair’s needs. Add oil or serum only if your hair asks for it.</p>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <div class="step-num">1</div>
+          <div class="eyebrow">Cleanse</div>
+          <h3>Shampoo the scalp, not the lengths</h3>
+          <p>Apply a generous amount to damp hair. Gently massage into the scalp, roots and ends, then rinse thoroughly.</p>
+          <div class="step-pick">
+            <button data-open="shampoo">Normal to dry scalp → Herbal Shampoo</button>
+            <button data-open="clarifying">Oily or combination → Clarifying</button>
+          </div>
+        </article>
+        <article class="step">
+          <div class="step-num">2</div>
+          <div class="eyebrow">Condition</div>
+          <h3>Condition the lengths, not the roots</h3>
+          <p>Squeeze out water. Apply conditioner to damp hair from mid-length to ends, leave it on for 2 minutes, then rinse thoroughly.</p>
+          <div class="step-pick">
+            <button data-open="conditioner">Frizz or tangles → Hi-Flex Conditioner</button>
+          </div>
+        </article>
+      </div>
+      <div class="extras">
+        <div class="extra"><img src="img/hairoil.jpg" alt=""><div><b>Twice a week, before washing</b><span>Massage Herbal Hair Oil into the scalp and ends for 5–10 minutes. Leave 2–3 hours, then shampoo.</span></div></div>
+        <div class="extra"><img src="img/goldoil.jpg" alt=""><div><b>On damp or dry ends</b><span>2–3 drops of Gold Oil on mid-lengths to ends. Avoid the scalp.</span></div></div>
+        <div class="extra"><img src="img/serum.jpg" alt=""><div><b>Daily, on the scalp</b><span>Spray Hair Growth Serum along partings, massage in and leave 2 hours or overnight.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INGREDIENTS -->
+  <section id="ingredients">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Ingredients</div>
+        <h2>Know what goes into your haircare.</h2>
+        <p class="lede">Explore our key ingredients, why we use them, and the full ingredient list for every formula.</p>
+      </div>
+      <div class="atlas">
+        <div class="herb-list" role="tablist" aria-label="Key ingredients" id="herbList"></div>
+        <div class="specimen" id="specimen" role="tabpanel"></div>
+      </div>
+      <div class="inci" id="inci">
+        <h3 style="font-size:24px;margin:38px 0 6px">Full ingredient lists</h3>
+        <p class="hint" style="margin-bottom:8px">Every ingredient, exactly as printed on the pack.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results" id="results">
+    <div class="wrap">
+      <div class="res-top sec-head">
+        <div style="display:grid;gap:14px">
+          <div class="eyebrow">Real customers · Real photos</div>
+          <h2>Their hair, in their own words.</h2>
+        </div>
+        <div class="score"><b>5.0</b><div><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><small>From the customer reviews shown on this page</small></div></div>
+      </div>
+      <div class="ba-wall" id="baWall"></div>
+    </div>
+    <div class="quotes"><div class="quote-track" id="quotes"></div></div>
+    <div class="wrap"><p class="disclaim">Photos and reviews were shared by HerbaGlow customers. Individual results vary with hair type, routine and consistency of use.</p></div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="wrap story-grid">
+      <div class="story-img"><img src="img/lineup.jpg" alt="The HerbaGlow range: hair serum, Hi-Flex conditioner, Gold Oil, herbal hair oil, clarifying shampoo, herbal shampoo and body wash"></div>
+      <div class="sec-head" style="margin:0">
+        <div class="eyebrow">Our story</div>
+        <h2>We make shampoo. That is where we started.</h2>
+        <p class="lede">As a shampoo and conditioner manufacturer, we bring our formulation experience to every product we make. Each batch is mixed by hand, with herbs chosen for a reason and nothing added for show.</p>
+        <div class="pillars">
+          <div class="pillar"><b>Formulated in-house</b><span>We develop, test and fill our own formulas.</span></div>
+          <div class="pillar"><b>Small batches</b><span>Handmade so every bottle is fresh.</span></div>
+          <div class="pillar"><b>Clear labels</b><span>Every ingredient listed, no hidden blends.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="support" id="help">
+    <div class="wrap support-grid">
+      <div class="contact-card">
+        <div class="eyebrow">Customer support</div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px)">Need help choosing?</h2>
+        <p class="lede" style="font-size:15px">Contact us for guidance on your haircare routine. A real person from our team answers.</p>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5h16v11H8l-4 4V5Z"/></svg><div><b>Live chat</b><br><span class="hint">Mon–Sat, 9am–9pm (MYT)</span></div></div>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg><div><b>WhatsApp</b><br><a href="https://wa.me/60103605970" target="_blank" rel="noopener">+60 10-360 5970</a></div></div>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><b>Email</b><br><span class="sel">herbaglow24@gmail.com</span></div></div>
+        <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg><div><b>Instagram</b><br><a href="https://www.instagram.com/herba.glow" target="_blank" rel="noopener">@herba.glow</a></div></div>
+        <div class="cta-row"><button class="btn btn-primary" id="openChat2">Chat with our team</button><a class="btn btn-ghost" href="https://wa.me/60103605970" target="_blank" rel="noopener">WhatsApp us</a></div>
+      </div>
+      <div class="faq">
+        <details open><summary>Which shampoo is right for me?</summary><p>If your scalp gets oily within a day or builds up after 2 to 3 days, choose the Clarifying Herbal Shampoo. If it feels comfortable, dry or tight, choose the Herbal Shampoo. Not sure? Take the scalp quiz.</p></details>
+        <details><summary>How soon will I see a difference?</summary><p>Most customers mention softer hair after the first wash. Changes in hair fall take consistent use over several weeks. Results differ from person to person.</p></details>
+        <details><summary>Can I use the oil and serum together?</summary><p>Yes. Use Herbal Hair Oil twice a week before washing, and Hair Growth Serum daily on a clean scalp. Gold Oil goes on the ends only. If you have asthma, migraine or sinus sensitivity, don’t leave the hair oil on for more than 15 minutes.</p></details>
+        <details><summary>Where do you deliver?</summary><p>Across Malaysia. Standard delivery is RM 8 and express delivery is RM 15. Standard delivery is free on orders of RM 50 and above.</p></details>
+        <details><summary>How do I pay?</summary><p>FPX online banking, debit and credit cards, and selected e-wallets, processed by our payment provider’s secure page.</p></details>
+        <details><summary>Which products are sulfate-free?</summary><p>Our Herbal Shampoo, Clarifying Herbal Shampoo, Hi-Flex Conditioner, Hair Growth Serum, Gold Oil and Body Wash are all free from sulfates and parabens. Full ingredient lists are in the Ingredients section.</p></details>
+        <details><summary>Can I return a product?</summary><p>Unopened products can be returned within 5 days. Contact us with your order number and we will arrange it.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><img src="img/logo.png" alt="HerbaGlow"></div>
+        <p style="max-width:36ch">Thoughtfully made haircare from a shampoo and conditioner manufacturer. Pure herbs, real care.</p><p style="margin-top:12px">WhatsApp <a href="https://wa.me/60103605970" target="_blank" rel="noopener">+60 10-360 5970</a><br>herbaglow24@gmail.com<br>Instagram @herba.glow</p>
+      </div>
+      <div><h4>Shop</h4><ul><li><a href="#shop">Shampoo</a></li><li><a href="#shop">Conditioner</a></li><li><a href="#shop">Oils &amp; serum</a></li><li><a href="#shop">Body</a></li><li><a href="#shop">Sets</a></li></ul></div>
+      <div><h4>Learn</h4><ul><li><a href="#compass" data-quiz>Scalp quiz</a></li><li><a href="#routine">Routine</a></li><li><a href="#ingredients">Ingredients</a></li><li><a href="#results">Results</a></li></ul></div>
+      <div><h4>Help</h4><ul><li><a href="#help">Contact</a></li><li><a href="#help">Shipping</a></li><li><a href="#help">Returns</a></li><li><a href="#help">FAQ</a></li></ul></div>
+    </div>
+    <div class="pay-row"><span>FPX</span><span>Visa</span><span>Mastercard</span><span>Touch ’n Go eWallet</span><span>GrabPay</span><span>Boost</span><span>ShopeePay</span></div>
+    <p style="margin-top:18px;font-size:12px;opacity:.7">© 2026 HerbaGlow · Nature Beauty Care · Prices in Ringgit Malaysia (RM)</p>
+  </div>
+</footer>
+
+<!-- left rail: scalp quiz -->
+<button class="rail" data-quiz aria-label="Open the scalp quiz">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+  Know your scalp · 60-sec quiz
+</button>
+<button class="pill-quiz" data-quiz><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>Scalp quiz</button>
+
+<div class="scrim" id="scrim"></div>
+
+<!-- Quiz drawer -->
+<aside class="drawer left" id="quiz" aria-label="Scalp quiz" aria-hidden="true">
+  <div class="drawer-head"><h3>The Scalp Compass</h3><button class="x" data-close aria-label="Close quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="drawer-body" id="quizBody"></div>
+  <div class="drawer-foot" id="quizFoot"></div>
+</aside>
+
+<!-- Cart drawer -->
+<aside class="drawer right" id="cart" aria-label="Cart" aria-hidden="true">
+  <div class="drawer-head"><h3>Your cart</h3><button class="x" data-close aria-label="Close cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot"></div>
+</aside>
+
+<!-- Quick view -->
+<div class="modal" id="qv" role="dialog" aria-modal="true" aria-label="Product details"><div class="modal-card" id="qvCard"></div></div>
+<div class="modal lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Customer photo"><div class="modal-card" id="lbCard"></div></div>
+
+<!-- Checkout -->
+<div class="checkout" id="checkout" aria-label="Checkout">
+  <div class="wrap">
+    <div class="co-top">
+      <a class="logo" href="#top" id="coLogo"><img src="img/logo.png" alt="HerbaGlow"></a>
+      <div class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Secure checkout</div>
+      <button class="x" id="coClose" aria-label="Leave checkout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <ol class="stepper" id="stepper"></ol>
+    <div id="coView"></div>
+  </div>
+</div>
+
+<!-- Live chat -->
+<button class="chat-fab" id="chatFab" aria-label="Open live chat"><span class="av"><img src="img/logo-emblem.png" alt=""></span><span class="t">Ask the HerbaGlow team</span></button>
+<div class="chat" id="chat" role="dialog" aria-label="Live chat">
+  <div class="chat-head">
+    <div class="av"><img src="img/logo-emblem.png" alt=""></div>
+    <div><b>HerbaGlow Care Team</b><span>Online · usually replies in a few minutes</span></div>
+    <button class="x" id="chatClose" aria-label="Close chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <a class="chat-wa" href="https://wa.me/60103605970" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>Prefer WhatsApp? <b>+60 10-360 5970</b></a>
+  <div class="quick" id="quick"></div>
+  <form class="chat-form" id="chatForm"><label class="sr" for="chatInput">Message</label><input id="chatInput" placeholder="Type your question…" autocomplete="off"><button aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 12 20 4l-6 16-3-7-7-1Z"/></svg></button></form>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const RM = n => 'RM\u00a0' + n.toFixed(2);
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- data ---------- */
+const WA_NUM = '60103605970';
+const WA_URL = 'https://wa.me/' + WA_NUM;
+const WA_TXT = '+60 10-360 5970';
+const EMAIL = 'herbaglow24@gmail.com';
+const IG = '@herba.glow';
+const FREE_OVER = 50;
+
+const FREE_STD = ['No artificial colours','No synthetic fragrances','No harsh detergents','No propylene glycol','No petrolatum','No MEA/DEA/TEA','No mineral oils','No triclosan','No sulfates','No parabens','No silicones'];
+const CARE_STD = 'Store in a cool, dark place. Colour and clarity may vary slightly due to organic content. For external use only. Shake well and patch test before use. If any negative reaction occurs, discontinue use and consult a health practitioner.';
+
+const PRODUCTS = [
+  {id:'shampoo', name:'Herbal Shampoo', kind:'Shampoo · Normal to dry scalp', img:'img/shampoo.jpg', tag:'Customer favourite',
+   desc:'Crafted with Indian and Chinese herbs including rosemary, ginseng, onion, curry leaves and neem, enriched with argan oil, lanolin and aloe vera. Cleanses deeply and leaves hair soft, healthy and revitalised.',
+   best:['Normal to dry scalp','Hair fall','Dandruff'], needs:['hairfall','dry','dandruff'],
+   herbs:['rosemary','ginseng','onion','hibiscus','amla','argan'],
+   also:'Curry leaves, neem, black seed, fenugreek, henna, shikakai, sweet flag, aloe vera, lanolin butter',
+   benefits:['Reduces hair fall','Treats dandruff','Soothes itchy scalp','Controls oily scalp','Promotes hair growth'],
+   variants:[{label:'250 gm',price:35,was:45},{label:'500 gm',price:65,was:90}],
+   how:'Apply a generous amount to damp hair. Gently massage into the scalp, roots and ends. Rinse thoroughly. Follow with HerbaGlow Hi-Flex Conditioner.',
+   free:['100% handmade',...FREE_STD],
+   inci:'Rosemary, Ginseng, Onion, Curry Leaves, Neem, Black Seed, Fenugreek, Hibiscus, Henna, Shikakai, Sweet Flag, Indian Gooseberry (Amla), Aloe Vera, Lanolin Butter, Argan Oil, Coco Glucoside (Derived from Coconut), Vegetable Glycerin, Rosemary Essential Oil, Polyquaternium-7, Sodium Benzoate, Phenoxyethanol, and Fragrance Oil.',
+   care:CARE_STD + ' Use within 12 months.'},
+  {id:'clarifying', name:'Clarifying Herbal Shampoo', kind:'Shampoo · Oily & combination scalp', img:'img/clarifying.jpg', tag:'Anti-hairfall',
+   desc:'Purifies scalp build-up and excess oil without over-drying. Rosemary, green tea, nettle, burdock and he shou wu support a fresh, balanced scalp, while witch hazel helps reduce sebum.',
+   best:['Oily & combination scalp','Build-up','Dandruff'], needs:['oily','dandruff','hairfall'],
+   herbs:['rosemary'],
+   also:'Green tea, nettle leaf, burdock root, he shou wu, witch hazel, tea tree oil, peppermint oil, hydrolysed rice protein, panthenol',
+   benefits:['Controls excess scalp oil gently','Helps reduce dandruff and build-up','Leaves hair soft, smooth and voluminous','Sulfate-free · Silicone-free · Paraben-free'],
+   variants:[{label:'250 gm',price:35,was:45},{label:'500 gm',price:65,was:90}],
+   how:'Apply to wet hair and scalp, massage to a lather and rinse well. Repeat if needed. For frizzy hair, follow with HerbaGlow Hi-Flex Conditioner.',
+   free:['Plant-based','pH balanced','No sulphates','No silicones','No parabens','No mineral oil','No colorants'],
+   inci:'Aqua (Water), Mild Plant-Derived Cleansers (Decyl Glucoside, Cocamidopropyl Betaine, Sodium Cocoyl Isethionate), Conditioning Agents (Polyquaternium-7, Centrimonium Chloride), Glycerin, Witch Hazel Extract, Hydrolyzed Rice Protein, Panthenol, Herbal Extract Blend (Rosemary, Green Tea, Nettle Leaf, Burdock Root, He Shou Wu), Tea Tree Oil, Peppermint Oil, Natural Preservatives.',
+   allergen:'Allergen note (from essential oils): may naturally contain limonene and linalool.',
+   care:'For external use only. Avoid contact with eyes. If irritation occurs, discontinue use and consult a physician. Keep out of reach of children. Store below 30 °C, away from direct sunlight. Use within 12 months after opening.'},
+  {id:'conditioner', name:'Hi-Flex Conditioner', kind:'Conditioner', img:'img/conditioner.jpg', tag:'Step 2',
+   desc:'Deep moisture and repair for soft, healthy hair. Hibiscus, flaxseed, shea butter and wheat protein restore flexibility and natural shine, and fight dryness and frizz with a light, non-greasy feel.',
+   best:['Frizz','Tangles','Breakage'], needs:['dry','shine'],
+   herbs:['hibiscus'],
+   also:'Flaxseed, shea butter, wheat protein, pro-vitamin B5',
+   benefits:['Reduces frizz','Minimises tangling','Prevents hair breakage','Enhances shine','Fully natural care'],
+   variants:[{label:'250 gm',price:37,was:55},{label:'500 gm',price:70,was:100}],
+   how:'Apply to damp hair after shampooing. Leave on for 2 minutes. Rinse thoroughly.',
+   free:['Vegan','100% handmade',...FREE_STD],
+   inci:'Distilled Water, Hibiscus, Flaxseed, Polyquaternium-7, Polyquaternium-10, Pro-Vitamin B5, Shea Butter, Wheat Protein, and Natural Preservatives.',
+   care:CARE_STD + ' Use within 6 months.'},
+  {id:'hairoil', name:'Herbal Hair Oil', kind:'Scalp oil · Twice a week', img:'img/hairoil.jpg', tag:'20+ herbs',
+   desc:'A nourishing blend of more than 20 Indian and Chinese herbs, crafted to nourish your scalp and hair and leave it glowing.',
+   best:['Hair fall','Build-up','Flakes & mild itch'], needs:['hairfall','dry','dandruff'],
+   herbs:['amla','ginseng','hibiscus','onion','rosemary','herbs'],
+   also:'Coconut and castor oil, bhringraj, gingko, fenugreek, moringa, ashwagandha, tulsi, neem, vetiver, avaram poo',
+   benefits:['Nourishes the scalp and roots','Blend of 20+ Indian & Chinese herbs','100% organic','Not tested on animals'],
+   variants:[{label:'50 ml',price:10,was:20},{label:'150 ml',price:30,was:40}],
+   how:'Apply on dry hair and gently massage onto the scalp and ends for 5–10 minutes. Leave for 2–3 hours, then wash with HerbaGlow herbal shampoo. Use twice a week for best results. If you have sinus issues, apply once every two weeks on sunny days.',
+   free:['100% organic','GMP','Not tested on animals'],
+   inci:'Coconut Oil, Castor Oil, Amla, Gingko, Hibiscus, Bhringraj, Fenugreek, Onion, Peppermint, Rosemary, Clove, Black Seed, Rose Petals, Henna, Moringa, Curry Leaves, Vetiver, Neem, Ashwagandha, Ginseng, Tulsi, Aloe Vera, Avaram Poo.',
+   caution:'Individuals with asthma, migraine or sinus sensitivity should not leave the oil on the scalp for more than 15 minutes. Daytime use is recommended.',
+   care:'Store at room temperature, away from direct sunlight. Use within 12 months after opening.'},
+  {id:'serum', name:'Hair Growth Serum', kind:'Scalp serum · Daily', img:'img/serum.jpg', tag:'Daily',
+   desc:'Infused with wheat, soy and a blend of Chinese and Indian herbs. Crafted to rebalance your scalp and restore hair shine, elasticity and strength.',
+   best:['Thinning hair','Hair fall','Oily scalp'], needs:['hairfall','oily'],
+   herbs:['amla'],
+   also:'Wheat germ, soybean germ, peppermint oil, Scutellaria baicalensis root, panthenol, arginine',
+   benefits:['Revitalises scalp','Strengthens hair','Reduces hair fall','Paraben-free · Sulfate-free'],
+   variants:[{label:'50 ml',price:31,was:45},{label:'100 ml',price:58,was:90}],
+   how:'Part your hair, spray the serum directly on your scalp and gently massage until fully absorbed. Leave it for 2 hours or overnight. For best results, use daily.',
+   free:['Paraben free','Sulfate free','Natural product','Not tested on animals'],
+   inci:'Aqua, Denatured Alcohol, Propanediol, Phenoxyethanol, Polysorbate 20, Glycerin, Panthenol, Arginine, Lactic Acid, Triethanolamine, Mentha Piperita (Peppermint) Oil, Glycine Soja (Soybean) Germ Extract, Triticum Vulgare (Wheat) Germ Extract, Phyllanthus Emblica Fruit Extract, Gluconolactone, Sodium Benzoate, Calcium Gluconate, Parfum, Scutellaria Baicalensis Roots Extract.',
+   care:CARE_STD + ' Use within 12 months.'},
+  {id:'goldoil', name:'Gold Oil', kind:'Finishing oil', img:'img/goldoil.jpg', tag:'Shine',
+   desc:'A light finishing oil of cupuaçu butter, jojoba, argan, broccoli seed and sweet almond for frizz-free shine and nourished hair.',
+   best:['Frizz & flyaways','Dry, dull ends','Colour-treated hair'], needs:['dry','shine'],
+   herbs:['argan'],
+   also:'Cupuaçu butter, jojoba, broccoli seed oil, sweet almond oil, fractionated coconut oil',
+   benefits:['Tames frizz & flyaways','Adds natural shine & smoothness','Nourishes dry, dull and damaged hair','Detangles effortlessly','Lightweight, non-greasy finish','Safe for daily use & colour-treated hair'],
+   variants:[{label:'10 ml',price:10,was:15},{label:'100 ml',price:40,was:55}],
+   how:'Apply 2–3 drops to damp or dry hair. Focus on mid-lengths to ends. Avoid the scalp. Use daily or as needed.',
+   free:['Paraben free','Sulfate free','Natural','Not tested on animals'],
+   inci:'Theobroma Grandiflorum (Capuacu) Seed Butter, Simmondsia Chinensis (Jojoba) Seed Oil, Argania Spinosa Kernel Oil, Brassica Oleracea Italica (Broccoli) Seed Oil, Cocos Nucifera (Coconut) Oil [Fractionated], Prunus Amygdalus Dulcis (Sweet Almond) Oil, C13-15 Alkane (Hemisqualane), Essential Oil (Fragrance) & more.',
+   care:'For external use only. Avoid contact with eyes. Discontinue use if irritation occurs. Keep away from children. Store in a cool, dry place away from sunlight and close the cap tightly. Use within 12 months.'},
+  {id:'bodywash', name:'Turmeric & Licorice Body Wash', kind:'Body', img:'img/bodywash.jpg', tag:'Sulphate free',
+   desc:'Gentle, sulphate-free cleansing with the goodness of turmeric and licorice, plus green tea, centella and chamomile.',
+   best:['Dry to normal skin','Everyday care'], needs:['body'],
+   herbs:['turmeric','licorice'],
+   also:'Green tea, ginger root, centella asiatica, chamomile, aloe vera, rosemary leaf',
+   benefits:['Sulphate free · gentle cleansing','Paraben free · skin friendly','TEA & MEA free','Vegan','Suitable for dry–normal skin','Cruelty free'],
+   variants:[{label:'300 ml',price:30,was:45}],
+   how:'Apply to wet body, lather gently and rinse thoroughly.',
+   free:['Sulphate free','Paraben free','TEA & MEA free','Vegan','Cruelty free'],
+   inci:'Aqua, Cocamidopropyl Betaine, Sodium C14-16 Olefin Sulfonate, Cocamide DEA, Decyl Glucoside, Fragrance, Glycerin, Polyglyceryl-4 Caprate, Phenoxyethanol, Polyquaternium-7, Coco-Glucoside, Camellia Sinensis Leaf Extract, Tetrasodium EDTA, Glycerin Oleate, Zingiber Root Extract, Aloe Vera Leaf Juice, Pentylene Glycol, Butylene Glycol, Fructose, Sodium Hydroxide, Centella Asiatica Extract, Saccharomyces Ferment Lysate Filtrate, Polygonum Cuspidatum Root Extract, Scutellaria Baicalensis Root Extract, Chamomile, Sodium PCA, Sodium Lactate, Trehalose, Allantoin, Licorice Root Extract, Chamomilla Recutita (Matricaria) Flower Extract, Rosmarinus Officinalis (Rosemary) Leaf Extract, Sodium Benzoate, Ascorbyl Palmitate, Sodium Hyaluronate, Glucose, Potassium Sorbate, Bacillus Ferment.',
+   care:'For external use only. Store in a safe, dry place away from direct sunlight.'},
+  {id:'combo', name:'Shampoo & Conditioner Set', kind:'Set · Cleanse + condition', img:'img/set-combo.jpg', tag:'Best value pair', set:true,
+   desc:'The two-step routine in one set. Choose Herbal Shampoo or Clarifying Shampoo, paired with Hi-Flex Conditioner in the same size.',
+   best:['Two-step routine','Hair fall','Frizz'], needs:['sets','hairfall','oily','dry'],
+   herbs:['rosemary','hibiscus','ginseng'],
+   contains:['Herbal or Clarifying Shampoo','Hi-Flex Conditioner'],
+   variants:[{label:'250 gm · Herbal Shampoo',price:70,was:85},{label:'250 gm · Clarifying Shampoo',price:70,was:85},{label:'500 gm · Herbal Shampoo',price:138,was:160},{label:'500 gm · Clarifying Shampoo',price:138,was:160}],
+   how:'Shampoo the scalp, rinse, then condition the lengths for 2 minutes and rinse.'},
+  {id:'fullset', name:'Full Hair Care Set', kind:'Set · With Herbal Shampoo', img:'img/set-full.jpg', tag:'Complete ritual', set:true,
+   desc:'The complete HerbaGlow ritual built around the Herbal Shampoo: cleanse, condition, treat the scalp and finish.',
+   best:['Hair fall','Thinning hair','Complete care'], needs:['sets','hairfall','dry','shine'],
+   herbs:['ginseng','amla','hibiscus','argan'],
+   contains:['Herbal Shampoo','Hi-Flex Conditioner','Herbal Hair Oil','Hair Growth Serum','Gold Oil'],
+   variants:[{label:'Full set',price:150,was:160}],
+   how:'Twice a week: oil before washing. Every wash: shampoo, then conditioner. Daily: serum on the scalp. As needed: Gold Oil on the ends.'},
+  {id:'starter', name:'Beginner Set', kind:'Set · Choose your scalp type', img:'img/set-beginner-dry.jpg', tag:'Try us first', set:true, opts:true,
+   desc:'An easy first step into HerbaGlow. Pick the set made for your scalp type.',
+   best:['First purchase','Two scalp types'], needs:['sets','dry','oily','hairfall'],
+   herbs:['rosemary','ginseng','amla'],
+   variants:[
+     {label:'Normal to Dry Scalp',short:'Dry scalp',price:57,was:80,img:'img/set-beginner-dry.jpg',
+      contains:['Herbal Shampoo · 250 gram','Herbal Hair Oil · 50 ml','Hair Growth Serum · 30 ml']},
+     {label:'Normal to Oily Scalp',short:'Oily scalp',price:52,was:75,img:'img/set-beginner-oily.jpg',
+      contains:['Clarifying Herbal Shampoo · 250 gram','Hair Growth Serum · 30 ml']}],
+   how:'Dry scalp set: oil twice a week before washing, shampoo every wash, serum daily on the scalp. Oily scalp set: clarifying shampoo every wash, serum daily on the scalp. Not sure which? Take the scalp quiz.'},
+];
+const P = Object.fromEntries(PRODUCTS.map(p=>[p.id,p]));
+const cardV = {};
+const imgOf = (p,v) => (v && v.img) || p.img;
+const containsOf = (p,v) => (v && v.contains) || p.contains;
+const pct = v => Math.round((1 - v.price / v.was) * 100);
+const priceHTML = (v, big) => `<span class="now tnum">${RM(v.price)}</span>${v.was?`<s class="was tnum">${RM(v.was)}</s>`:''}`;
+
+const HERBS = {
+  ginseng:{name:'Ginseng', latin:'Panax ginseng', fam:'Root', img:'img/herb-ginseng.jpg',
+    why:'A prized root of Chinese herbal tradition, valued for vitality. We use it in our Herbal Shampoo and Herbal Hair Oil for scalp and root care.',
+    feel:'Strengthening, revitalising', in:['shampoo','hairoil']},
+  rosemary:{name:'Rosemary', latin:'Salvia rosmarinus', fam:'Mint family', img:'img/herb-rosemary.jpg',
+    why:'A traditional herb for scalp care. Its clean, herbal scent gives our shampoos their fresh finish.',
+    feel:'Clean, herbal, invigorating', in:['shampoo','clarifying','hairoil']},
+  hibiscus:{name:'Hibiscus', latin:'Hibiscus rosa-sinensis', fam:'Mallow family', img:'img/herb-hibiscus.jpg',
+    why:'Used for generations in Indian hair rituals. Its natural slip helps hair feel smooth and easier to detangle.',
+    feel:'Smoothing, softening', in:['conditioner','shampoo','hairoil']},
+  amla:{name:'Amla', latin:'Phyllanthus emblica', fam:'Indian gooseberry', img:'img/herb-amla.jpg',
+    why:'A classic of Indian hair care, rich in natural antioxidants. Found in our shampoo, hair oil and Hair Growth Serum.',
+    feel:'Nourishing, conditioning', in:['hairoil','serum','shampoo']},
+  onion:{name:'Onion', latin:'Allium cepa', fam:'Bulb', img:'img/herb-onion.jpg',
+    why:'A traditional home remedy for the scalp, gently infused so you get the benefit without a strong smell.',
+    feel:'Scalp-focused', in:['shampoo','hairoil']},
+  argan:{name:'Argan', latin:'Argania spinosa', fam:'Kernel oil', img:'img/herb-argan.jpg',
+    why:'A light, fast-absorbing oil that smooths the hair surface for shine without heaviness.',
+    feel:'Light, glossy, non-greasy', in:['goldoil','shampoo']},
+  herbs:{name:'20+ herb blend', latin:'Bhringraj, gingko, moringa, tulsi', fam:'Infusion', img:'img/herb-herbs.jpg',
+    why:'More than twenty Indian and Chinese herbs slowly infused in coconut and castor oil, the way it has been done in Indian homes for generations.',
+    feel:'Deeply nourishing', in:['hairoil']},
+  turmeric:{name:'Turmeric', latin:'Curcuma longa', fam:'Ginger family', img:'img/herb-turmeric.jpg',
+    why:'A golden root valued in South Asian skin rituals. It gives our body wash its warm character.',
+    feel:'Warm, comforting', in:['bodywash']},
+  licorice:{name:'Licorice', latin:'Glycyrrhiza glabra', fam:'Pea family', img:'img/herb-licorice.jpg',
+    why:'A soothing root used in skincare for its gentle, calming feel on the skin.',
+    feel:'Soothing, gentle', in:['bodywash']},
+};
+
+const NEEDS = [
+  {id:'all', label:'All products'},
+  {id:'hairfall', label:'Hair fall'},
+  {id:'oily', label:'Oily scalp'},
+  {id:'dry', label:'Dry & frizzy'},
+  {id:'dandruff', label:'Dandruff & flakes'},
+  {id:'shine', label:'Shine & softness'},
+  {id:'body', label:'Body'},
+  {id:'sets', label:'Sets & savings'},
+];
+
+const BA = [
+  {img:'img/ba-2months.jpg', a:'Hairline', b:'2 months', note:'Hairline before and after two months of use.'},
+  {img:'img/ba-hand.jpg', a:'Hair fall in hand', b:'Before / after', note:'Hair shed during a wash, before and after.'},
+  {img:'img/ba-timeline.jpg', a:'Thinning patch', b:'May → Dec 2025', note:'One customer’s scalp photographed from May to December 2025.'},
+  {img:'img/ba-crown.jpg', a:'Crown', b:'Before / after', note:'Crown, before and after.'},
+  {img:'img/ba-weeks.jpg', a:'Oil + shampoo', b:'Week 1–3', note:'Hair shed after using the oil and shampoo, tracked week by week.'},
+  {img:'img/ba-long.jpg', a:'Lengths', b:'Before / after', note:'Fuller-looking lengths, before and after.'},
+  {img:'img/ba-7months.jpg', a:'Crown', b:'2 → 7 months', note:'Crown at two months and seven months.'},
+  {img:'img/ba-babyhair.jpg', a:'Parting', b:'Feb → Jul 2026', note:'Parting from February to July 2026.'},
+  {img:'img/ba-length.jpg', a:'Face-framing', b:'Before / after', note:'Front and lengths, before and after.'},
+  {img:'img/ba-patch.jpg', a:'Temple', b:'Before / after', note:'Temple area, before and after.'},
+  {img:'img/ba-hairline.jpg', a:'Front', b:'Before / after', note:'Front hairline, before and after.'},
+  {img:'img/ba-card.jpg', a:'Review', b:'Hair fall', note:'A customer review with before and after photos.'},
+];
+
+const QUOTES = [
+  {t:'I have been using it for two weeks and I’m so in love with the after-wash effect. Too soft and silky. My hair looks so healthy after so long, as I have bleached.', n:'L**a', p:'Herbal shampoo'},
+  {t:'Your shampoo really good. After using shampoo my hair very soft. Hair fall less. Hair oil also very good. I will continue using your shampoo and hair oil.', n:'WhatsApp customer', p:'Shampoo + hair oil'},
+  {t:'Second time purchasing this homemade shampoo. I have had a hair fall issue for 5 years… Plus I’m just in love with the herbal smell. The freshness lasts for 3 days.', n:'alicia2386', p:'Herbal shampoo'},
+  {t:'I’m very satisfied with the herbal shampoo. This shampoo makes my hair very soft and frizz free even after first wash.', n:'u**3', p:'Herbal shampoo'},
+  {t:'Years suffering with this dandruff and now it reduced 70–80% in just 2 uses.', n:'P**e', p:'Herbal shampoo'},
+  {t:'I had severe hair fall. Just in 3 washes I can see so much difference.', n:'n**', p:'Herbal shampoo'},
+  {t:'As’salam sis… my hair fall has reduced… tried so many products before, none worked… thank you.', n:'Customer message', p:'Herbal range'},
+  {t:'Very happy with this shampoo… highly recommended for heavy hair fall… I saw results in two weeks.', n:'C**a M**y', p:'Herbal shampoo'},
+  {t:'I’m really glad that I purchased your product. Hair is so important for ladies, and many struggle with hair fall. You’re not doing just a business, it’s more than that.', n:'Verified customer', p:'Herbal range'},
+];
+
+/* ---------- state ---------- */
+let cart = [];  // {id, v, qty}
+try { const s = JSON.parse(localStorage.getItem('hg-cart')||'[]'); if (Array.isArray(s)) cart = s.filter(l=>P[l.id] && P[l.id].variants[l.v]); } catch(e) {}
+const saveCart = () => { try { localStorage.setItem('hg-cart', JSON.stringify(cart)); } catch(e) {} };
+let filter = 'all';
+const co = {step:0, details:{name:'',email:'',phone:'',addr1:'',addr2:'',city:'',postcode:'',state:'',notes:''}, ship:null, pay:'fpx', bank:'', wallet:'tng', promo:null, order:null};
+
+/* ---------- toast ---------- */
+let tt;
+function toast(html){ const t=$('#toast'); t.innerHTML=html; t.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'),3200); }
+
+/* ---------- marquee ---------- */
+(function(){
+  const words=['Handmade in small batches','Ginseng','Hibiscus','Amla','20+ Indian & Chinese herbs','Cleanse, then condition','Argan','Rosemary','Plant-based formulas','Turmeric & licorice'];
+  const html = words.map(w=>`<span>${esc(w)}</span>`).join('');
+  $('#marquee').innerHTML = html + html;
+})();
+
+/* ---------- scalp type cards ---------- */
+const GLYPH = {
+  oily:'<svg class="scalp-glyph" viewBox="0 0 54 54"><circle cx="27" cy="27" r="26" fill="#E6EBD8"/><path d="M27 12c6 8 10 13 10 19a10 10 0 0 1-20 0c0-6 4-11 10-19Z" fill="#B5842A"/><circle cx="23" cy="31" r="2.5" fill="#FBF9F0"/></svg>',
+  balanced:'<svg class="scalp-glyph" viewBox="0 0 54 54"><circle cx="27" cy="27" r="26" fill="#E6EBD8"/><path d="M14 33c8 0 18-6 26-18-12 2-22 8-26 18Z" fill="#1D5A35"/><path d="M14 33 30 22" stroke="#FBF9F0" stroke-width="1.5"/></svg>',
+  dry:'<svg class="scalp-glyph" viewBox="0 0 54 54"><circle cx="27" cy="27" r="26" fill="#F0D6CC"/><path d="M14 20h26M14 27h20M14 34h24" stroke="#A2611B" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="4 4"/></svg>',
+  flaky:'<svg class="scalp-glyph" viewBox="0 0 54 54"><circle cx="27" cy="27" r="26" fill="#E9E4F3"/><g fill="#7B68A8"><rect x="16" y="17" width="6" height="4" rx="1" transform="rotate(-15 19 19)"/><rect x="30" y="15" width="7" height="4" rx="1" transform="rotate(20 33 17)"/><rect x="22" y="28" width="8" height="4" rx="1"/><rect x="34" y="32" width="5" height="4" rx="1" transform="rotate(-25 36 34)"/><rect x="15" y="35" width="6" height="3" rx="1"/></g></svg>'
+};
+const SCALPS = [
+  {k:'balanced', v:'normal', t:'Comfortable', d:'No oiliness the day after washing.'},
+  {k:'oily', v:'oily24', t:'Oily within 24 hours', d:'Roots look greasy again by the next day.'},
+  {k:'flaky', v:'build', t:'Waxy build-up', d:'Scalp feels heavy or waxy after 2 to 3 days.'},
+  {k:'dry', v:'dry', t:'Dry or tight', d:'Scalp feels dry or tight after washing.'},
+];
+$('#scalpTypes').innerHTML = SCALPS.map(s=>`<button class="scalp" data-scalp="${s.v}">${GLYPH[s.k]}<h3>${s.t}</h3><p>${s.d}</p><span class="go">Start with this answer →</span></button>`).join('');
+
+/* ---------- shop ---------- */
+function renderChips(){
+  $('#chips').innerHTML = NEEDS.map(n=>`<button class="chip" aria-pressed="${n.id===filter}" data-need="${n.id}">${n.label}</button>`).join('');
+}
+function cardHTML(p){
+  const vi = p.opts ? (cardV[p.id]||0) : 0, v=p.variants[vi], cont=containsOf(p,v);
+  return `
+    <article class="card${p.set?' set-card':''}" data-card="${p.id}">
+      <button class="card-img" data-open="${p.id}" aria-label="View ${esc(p.name)}"><img src="${imgOf(p,v)}" alt="${esc(p.name)}${p.opts?' — '+esc(v.label):''}" loading="lazy"><span class="tag">${esc(p.tag)}</span>${v.was?`<span class="save">−${pct(v)}%</span>`:''}</button>
+      <div class="card-body">
+        <div class="card-kind">${esc(p.kind)}</div>
+        <h3>${esc(p.name)}</h3>
+        ${p.opts?`<div class="seg" role="radiogroup" aria-label="Scalp type">${p.variants.map((x,i)=>`<button role="radio" aria-checked="${i===vi}" data-cardv="${p.id}:${i}">${esc(x.label)}</button>`).join('')}</div>`:`<p class="card-desc">${esc(p.desc)}</p>`}
+        ${cont?`<ul class="contains">${cont.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>`:`<div class="bestfor">${p.best.map(b=>`<span>${esc(b)}</span>`).join('')}</div>`}
+        <div class="card-foot">
+          <div class="price">${priceHTML(v)}<small>${p.opts?esc(v.short):(p.variants.length>1?'from · ':'')+esc(v.label)}</small></div>
+          ${p.opts?`<button class="btn btn-primary btn-sm" data-addv="${p.id}:${vi}">Add to cart</button>`:`<button class="btn btn-primary btn-sm" data-${p.variants.length>1?'open':'add'}="${p.id}">${p.variants.length>1?'Choose size':'Add to cart'}</button>`}
+        </div>
+      </div>
+    </article>`;
+}
+function renderGrid(){
+  const match = p => filter==='all' || p.needs.includes(filter);
+  const singles = PRODUCTS.filter(p=>!p.set && match(p));
+  const sets = PRODUCTS.filter(p=>p.set && match(p));
+  $('#grid').innerHTML = singles.map(cardHTML).join('') + (filter==='all' ? `
+    <article class="card promo-card"><div class="card-body">
+      <div class="eyebrow" style="color:var(--gold-soft)">Not sure where to start?</div>
+      <h3>Let your scalp choose.</h3>
+      <p>Answer four easy questions. We’ll read your scalp and suggest the products that suit it.</p>
+      <div class="promo-glyphs">${GLYPH.oily}${GLYPH.balanced}${GLYPH.dry}${GLYPH.flaky}</div>
+      <button class="btn btn-gold" data-quiz style="margin-top:auto">Take the scalp quiz</button>
+    </div></article>` : '');
+  $('#grid').hidden = !singles.length && filter!=='all';
+  $('#setsWrap').hidden = !sets.length;
+  $('#setGrid').innerHTML = sets.map(cardHTML).join('');
+}
+renderChips(); renderGrid();
+
+/* ---------- herb atlas ---------- */
+let herb = 'ginseng';
+function renderAtlas(){
+  $('#herbList').innerHTML = Object.entries(HERBS).map(([k,h])=>`<button class="herb-btn" role="tab" aria-selected="${k===herb}" data-herb="${k}"><img src="${h.img}" alt=""><span><b>${h.name}</b><i>${h.latin}</i></span></button>`).join('');
+  const h = HERBS[herb];
+  $('#specimen').innerHTML = `
+    <div class="specimen-img"><img src="${h.img}" alt="${h.name}"><span class="stamp">${esc(h.fam)}</span></div>
+    <div class="specimen-body">
+      <div class="eyebrow">Key ingredient</div>
+      <h3>${h.name}</h3>
+      <div class="latin">${h.latin}</div>
+      <p>${h.why}</p>
+      <dl><dt>How it feels</dt><dd>${h.feel}</dd><dt>Found in</dt><dd><div class="in-products">${h.in.map(id=>`<button data-open="${id}"><img src="${P[id].img}" alt="">${esc(P[id].name)}</button>`).join('')}</div></dd></dl>
+    </div>`;
+}
+renderAtlas();
+$('#inci').insertAdjacentHTML('beforeend', PRODUCTS.filter(p=>!p.set).map(p=>`
+  <details><summary>${esc(p.name)} <span class="hint" style="margin-left:auto;font-weight:500">${esc(p.variants.map(v=>v.label).join(' / '))}</span></summary>
+    <div class="inci-body">
+      <p class="inci-list"><b>Ingredients:</b> ${esc(p.inci)}</p>
+      ${p.allergen?`<p style="margin-top:6px">${esc(p.allergen)}</p>`:''}
+      ${p.free&&p.free.length?`<div class="free">${p.free.map(c=>`<span>${esc(c)}</span>`).join('')}</div>`:''}
+      ${p.caution?`<p class="caution"><b>Caution:</b> ${esc(p.caution)}</p>`:''}
+      <p style="margin-top:8px">${esc(p.care)}</p>
+    </div>
+  </details>`).join(''));
+
+/* ---------- results ---------- */
+$('#baWall').innerHTML = BA.map((b,i)=>`<button class="ba" data-ba="${i}" aria-label="Enlarge: ${esc(b.note)}"><img src="${b.img}" alt="${esc(b.note)}"><figcaption><span>${esc(b.a)}</span><span>${esc(b.b)}</span></figcaption></button>`).join('');
+const qhtml = QUOTES.map(q=>`<blockquote class="quote"><div class="stars" aria-label="5 stars">★★★★★</div><p>“${esc(q.t)}”</p><footer><b>${esc(q.n)}</b><span>${esc(q.p)}</span></footer></blockquote>`).join('');
+$('#quotes').innerHTML = qhtml + qhtml.replace(/<blockquote class="quote">/g,'<blockquote class="quote" aria-hidden="true">');
+
+/* ---------- overlays ---------- */
+const scrim = $('#scrim');
+let openEl = null;
+function openLayer(el){ closeLayer(); openEl=el; el.classList.add('open'); el.setAttribute('aria-hidden','false'); scrim.classList.add('on'); document.body.style.overflow='hidden'; const f=el.querySelector('button,input,select'); f&&setTimeout(()=>f.focus({preventScroll:true}),50); }
+function closeLayer(){ if(!openEl) return; openEl.classList.remove('open'); openEl.setAttribute('aria-hidden','true'); openEl=null; scrim.classList.remove('on'); document.body.style.overflow=''; }
+scrim.addEventListener('click', closeLayer);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ if($('#chat').classList.contains('open')) toggleChat(false); else closeLayer(); }});
+$$('.modal').forEach(m=>m.addEventListener('click',e=>{ if(e.target===m) closeLayer(); }));
+
+/* ---------- quick view ---------- */
+let qvState = {id:null,v:0,qty:1};
+function openQV(id){
+  qvState = {id, v:(P[id].opts?(cardV[id]||0):0), qty:1};
+  renderQV(); openLayer($('#qv'));
+}
+function renderQV(){
+  const p = P[qvState.id], v = p.variants[qvState.v];
+  $('#qvCard').innerHTML = `
+    <button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="qv-img${p.opts?' square':''}"><img src="${imgOf(p,v)}" alt="${esc(p.name)}"></div>
+    <div class="qv-body">
+      <div class="card-kind">${esc(p.kind)}</div>
+      <h3>${esc(p.name)}</h3>
+      <div class="price qv-price">${priceHTML(v)}${v.was?`<span class="save-pill">Save ${RM(v.was-v.price)}</span>`:''}</div>
+      <p>${esc(p.desc)}</p>
+      ${containsOf(p,v)?`<div><span class="label">What’s inside</span><ul class="contains" style="margin-top:8px">${containsOf(p,v).map(c=>`<li>${esc(c)}</li>`).join('')}</ul></div>`:''}
+      ${p.benefits?`<ul class="benefits">${p.benefits.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>`:''}
+      <span class="label">${p.opts?'Choose your scalp type':p.set?'Choose your set':'Size'}</span>
+      <div class="variants">${p.variants.map((x,i)=>`<button class="variant" aria-pressed="${i===qvState.v}" data-variant="${i}"><b>${esc(x.label)}</b><span class="tnum">${RM(x.price)}</span>${x.was?` <s class="tnum">${RM(x.was)}</s>`:''}</button>`).join('')}</div>
+      <div class="qv-add">
+        <div class="qty"><button data-qvq="-1" aria-label="Decrease quantity">−</button><output class="tnum">${qvState.qty}</output><button data-qvq="1" aria-label="Increase quantity">+</button></div>
+        <button class="btn btn-primary" style="flex:1" data-qvadd>Add to cart · <span class="tnum">${RM(v.price*qvState.qty)}</span></button>
+      </div>
+      <div class="howto"><b style="color:var(--forest-deep)">How to use.</b> ${esc(p.how)}</div>
+      ${p.caution?`<p class="caution"><b>Caution:</b> ${esc(p.caution)}</p>`:''}
+      <div><span class="label">Key ingredients</span><div class="in-products" style="margin-top:8px">${p.herbs.map(h=>`<button data-herbjump="${h}"><img src="${HERBS[h].img}" alt="">${HERBS[h].name}</button>`).join('')}</div>${p.also?`<p class="hint" style="margin-top:8px">Also: ${esc(p.also)}.</p>`:''}</div>
+      ${p.inci?`<details class="qv-inci"><summary>Full ingredient list</summary><p>${esc(p.inci)}</p>${p.allergen?`<p>${esc(p.allergen)}</p>`:''}<p>${esc(p.care)}</p></details>`:''}
+    </div>`;
+}
+$('#qvCard').addEventListener('click', e=>{
+  const t=e.target.closest('button'); if(!t) return;
+  if (t.dataset.variant) { qvState.v=+t.dataset.variant; if (P[qvState.id].opts){ cardV[qvState.id]=qvState.v; renderGrid(); } renderQV(); }
+  else if (t.dataset.qvq) { qvState.qty=Math.max(1,Math.min(20,qvState.qty+ +t.dataset.qvq)); renderQV(); }
+  else if ('qvadd' in t.dataset) { addToCart(qvState.id,qvState.v,qvState.qty); closeLayer(); }
+  else if (t.dataset.herbjump) { herb=t.dataset.herbjump; renderAtlas(); closeLayer(); $('#ingredients').scrollIntoView({behavior:'smooth'}); }
+});
+
+/* lightbox */
+function openLB(i){ const b=BA[i]; $('#lbCard').innerHTML=`<button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg></button><img src="${b.img}" alt="${esc(b.note)}"><p>${esc(b.note)} Shared by a HerbaGlow customer. Individual results vary.</p>`; openLayer($('#lb')); }
+
+/* ---------- cart ---------- */
+const lineOf = l => ({...l, p:P[l.id], vv:P[l.id].variants[l.v]});
+const subtotal = () => cart.reduce((s,l)=>s+P[l.id].variants[l.v].price*l.qty,0);
+const count = () => cart.reduce((s,l)=>s+l.qty,0);
+function addToCart(id,v=0,qty=1,silent){
+  const ex = cart.find(l=>l.id===id&&l.v===v);
+  if (ex) ex.qty=Math.min(20,ex.qty+qty); else cart.push({id,v,qty});
+  saveCart(); renderCart();
+  if(!silent) toast(`Added ${esc(P[id].name)} <button id="toastView">View cart</button>`);
+}
+function renderCart(){
+  const c = count(); const b=$('#cartCount'); b.textContent=c; b.hidden=!c;
+  if (!cart.length){
+    $('#cartBody').innerHTML = `<div class="cart-empty"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><p>Your cart is empty.</p><button class="btn btn-gold btn-sm" data-quiz>Not sure where to start? Take the quiz</button></div>`;
+    $('#cartFoot').innerHTML = `<button class="btn btn-primary" data-close data-goshop>Browse products</button>`;
+    return;
+  }
+  $('#cartBody').innerHTML = cart.map((l,i)=>{ const x=lineOf(l); return `
+    <div class="line"><img src="${imgOf(x.p,x.vv)}" alt="">
+      <div><b>${esc(x.p.name)}</b><div class="meta">${esc(x.vv.label)} · ${RM(x.vv.price)} each${x.vv.was?` <s>${RM(x.vv.was)}</s>`:''}</div>
+        <div class="qty"><button data-q="${i}" data-d="-1" aria-label="Decrease">−</button><output class="tnum">${l.qty}</output><button data-q="${i}" data-d="1" aria-label="Increase">+</button></div><button class="remove" data-rm="${i}">Remove</button></div>
+      <div class="price tnum" style="font-size:15px">${RM(x.vv.price*l.qty)}</div></div>`; }).join('');
+  const st = subtotal(), left = Math.max(0, FREE_OVER-st);
+  $('#cartFoot').innerHTML = `
+    <div class="freebar">${left>0?`Add <b class="tnum">${RM(left)}</b> more for free standard delivery.`:'You’ve unlocked free standard delivery.'}<div class="bar"><i style="width:${Math.min(100,st/FREE_OVER*100)}%"></i></div></div>
+    <div class="sumrow total"><span>Subtotal</span><span class="tnum">${RM(st)}</span></div>
+    <p class="hint">Shipping and discounts are calculated at checkout.</p>
+    <button class="btn btn-primary" id="toCheckout">Checkout securely</button>
+    <p class="hint" style="text-align:center">Guest checkout · FPX · Cards · E-wallets</p>`;
+}
+$('#cartBody').addEventListener('click', e=>{
+  const t=e.target.closest('button'); if(!t) return;
+  if (t.dataset.q!==undefined){ const l=cart[+t.dataset.q]; l.qty+= +t.dataset.d; if(l.qty<1) cart.splice(+t.dataset.q,1); saveCart(); renderCart(); }
+  if (t.dataset.rm!==undefined){ cart.splice(+t.dataset.rm,1); saveCart(); renderCart(); }
+});
+renderCart();
+
+/* ---------- quiz (HerbaGlow logic: 4 questions) ---------- */
+const QUIZ = [
+  {id:'scalp', q:'How does your scalp feel the day after you wash your hair?', h:'Select all that apply.', multi:true, o:[
+    {v:'normal', i:'🌿', b:'Comfortable, no oiliness'},
+    {v:'oily24', i:'💧', b:'Oily again within 24 hours'},
+    {v:'build', i:'🫧', b:'Heavy, waxy build-up after 2 to 3 days'},
+    {v:'dry', i:'🍂', b:'Dry or tight'}]},
+  {id:'flakes', q:'When you rub your scalp after washing, what do you notice?', h:'Select all that apply.', multi:true, o:[
+    {v:'none', i:'✨', b:'No flakes, no itch'},
+    {v:'powdery', i:'❄️', b:'Powdery, dust-like flakes'},
+    {v:'mildItch', i:'🤏', b:'Mild itch'},
+    {v:'strongItch', i:'⚠️', b:'Strong, persistent itch'}]},
+  {id:'frizz', q:'How would you describe your hair?', h:'Select all that apply.', multi:true, o:[
+    {v:'normal', i:'🤍', b:'Normal, no frizz'},
+    {v:'frizzy', i:'〰️', b:'Frizzy'},
+    {v:'veryFrizzy', i:'🌾', b:'Very frizzy, breakage, or dry ends'}]},
+  {id:'regrow', q:'Are you trying to regrow thinning hair?', h:'Choose one.', multi:false, o:[
+    {v:'yes', i:'🌱', b:'Yes, my hair is thinning'},
+    {v:'no', i:'👍', b:'No'}]},
+];
+let qa = {}, qi = 0;
+const sel = id => qa[id] || [];
+function openQuiz(pre){
+  if (pre!==undefined){ qa = {scalp:[pre]}; qi = 1; }
+  renderQuiz(); openLayer($('#quiz'));
+}
+function renderQuiz(){
+  if (qi>=QUIZ.length) return renderResult();
+  const Q = QUIZ[qi], picked = sel(Q.id);
+  $('#quizBody').innerHTML = `
+    <div class="q-progress">${QUIZ.map((_,i)=>`<i class="${i<=qi?'on':''}"></i>`).join('')}</div>
+    <div class="q-count">Question ${qi+1} of ${QUIZ.length}</div>
+    <h4 class="q-title">${Q.q}</h4><p class="q-help">${Q.h}</p>
+    <div class="opts" role="group" aria-label="${esc(Q.q)}">${Q.o.map(o=>`<button class="opt${Q.multi?' multi':''}" aria-pressed="${picked.includes(o.v)}" data-opt="${o.v}"><span class="ico" aria-hidden="true">${o.i}</span><span><b>${o.b}</b></span><span class="tick" aria-hidden="true">✓</span></button>`).join('')}</div>`;
+  $('#quizFoot').innerHTML = `<div class="q-nav"><button class="btn btn-ghost btn-sm" data-qback ${qi===0?'disabled':''}>Back</button><button class="btn btn-primary btn-sm" data-qnext ${picked.length?'':'disabled'}>${qi===QUIZ.length-1?'See my routine':'Next'}</button></div>${picked.length?'':'<p class="hint" style="text-align:right">Choose at least one answer to continue.</p>'}`;
+}
+function recommend(){
+  const scalp = sel('scalp'), flakes = sel('flakes'), frizz = sel('frizz'), regrow = sel('regrow');
+  if (flakes.includes('strongItch')) return {expert:true};
+  const recs = [];
+  const add = (id, why) => { if (!recs.some(r=>r.id===id)) recs.push({id, why}); };
+  if (scalp.includes('oily24')){
+    add('clarifying', 'Removes excess oil that builds up within a day of washing.');
+    add('serum', 'Suits scalps that get oily quickly, and supports hair you want to regrow.');
+  } else if (scalp.includes('build')){
+    add('clarifying', 'Clears build-up that forms over 2 to 3 days.');
+    add('hairoil', 'Used as a scalp treatment after clarifying.');
+  } else if (flakes.includes('powdery') || flakes.includes('mildItch')){
+    add('shampoo', 'Gentle on normal to dry, sensitive scalps.');
+    add('hairoil', 'Used as a scalp treatment for powdery flakes and mild itch.');
+  } else {
+    add('shampoo', 'Gentle on normal to dry, sensitive scalps.');
+  }
+  if (frizz.includes('frizzy') || frizz.includes('veryFrizzy')) add('conditioner', 'Helps frizzy hair stay soft and manageable.');
+  if (frizz.includes('veryFrizzy')) add('goldoil', 'Added for very frizzy hair, breakage, or dry ends.');
+  if (regrow.includes('yes')) add('serum', 'Rich in soy and wheat protein, chosen for thinning hair and regrowth goals.');
+  return {expert:false, recs};
+}
+function renderResult(){
+  const r = recommend();
+  if (r.expert){
+    $('#quizBody').innerHTML = `
+      <div class="result-hero"><div class="eyebrow">Your result</div><h4>Let’s look at this together</h4>
+      <p>Strong or persistent itching can have many causes, so we don’t want to guess. Please reach out to our expert on WhatsApp, who can look at your scalp and hair routine with you.</p></div>
+      <div class="wa-card"><span class="label">WhatsApp</span><b class="tnum">${WA_TXT}</b></div>`;
+    $('#quizFoot').innerHTML = `<a class="btn btn-primary" href="${WA_URL}" target="_blank" rel="noopener">Chat with our expert on WhatsApp</a>
+      <button class="btn btn-ghost btn-sm" data-qrestart>Take the quiz again</button>`;
+    return;
+  }
+  const total = r.recs.reduce((s,x)=>s+P[x.id].variants[0].price,0);
+  const was = r.recs.reduce((s,x)=>s+(P[x.id].variants[0].was||P[x.id].variants[0].price),0);
+  $('#quizBody').innerHTML = `
+    <div class="result-hero"><div class="eyebrow">Your result</div><h4>Your suggested routine</h4><p>Based on your scalp and hair answers. Sizes start at the smaller bottle; you can change them in the cart.</p></div>
+    ${r.recs.map(x=>{const p=P[x.id], v=p.variants[0];return `<div class="rec"><img src="${p.img}" alt=""><div><span class="role">Recommended</span><b>${esc(p.name)}</b><p>${x.why}</p></div><div class="price tnum">${RM(v.price)}${v.was?`<s class="was">${RM(v.was)}</s>`:''}</div></div>`;}).join('')}
+    <div class="wa-card" style="margin-top:16px"><p class="hint">Not sure about your results? Reach out to our expert on WhatsApp, who can help you choose.</p><a class="btn btn-ghost btn-sm" href="${WA_URL}" target="_blank" rel="noopener">Ask our expert on WhatsApp</a></div>`;
+  $('#quizFoot').innerHTML = `<div class="sumrow total"><span>Your routine (${r.recs.length} ${r.recs.length===1?'product':'products'})</span><span class="tnum">${RM(total)}${was>total?` <s class="was">${RM(was)}</s>`:''}</span></div>
+    <button class="btn btn-primary" data-addroutine>Add my routine to cart</button>
+    <button class="btn btn-ghost btn-sm" data-qrestart>Take the quiz again</button>`;
+}
+$('#quizBody').addEventListener('click', e=>{
+  const t=e.target.closest('[data-opt]'); if(!t) return;
+  const Q=QUIZ[qi], v=t.dataset.opt; let list=sel(Q.id);
+  if (Q.multi) list = list.includes(v) ? list.filter(x=>x!==v) : [...list, v]; else list=[v];
+  qa[Q.id]=list; renderQuiz();
+  if (!Q.multi) setTimeout(()=>{ if(qi<QUIZ.length && sel(Q.id).length){ qi++; renderQuiz(); } }, 260);
+});
+$('#quizFoot').addEventListener('click', e=>{
+  const t=e.target.closest('button'); if(!t) return;
+  if ('qback' in t.dataset){ qi=Math.max(0,qi-1); renderQuiz(); }
+  if ('qnext' in t.dataset){ qi++; renderQuiz(); $('#quiz .drawer-body').scrollTop=0; }
+  if ('qrestart' in t.dataset){ qa={}; qi=0; renderQuiz(); }
+  if ('addroutine' in t.dataset){ const r=recommend(); r.recs.forEach(x=>addToCart(x.id,0,1,true)); closeLayer(); toast(`Your routine is in the cart <button id="toastView">View cart</button>`); }
+});
+
+/* ---------- checkout ---------- */
+const STEPS = ['Cart','Delivery','Shipping','Payment','Review'];
+const STATES_W = ['Johor','Kedah','Kelantan','Melaka','Negeri Sembilan','Pahang','Penang','Perak','Perlis','Selangor','Terengganu','W.P. Kuala Lumpur','W.P. Putrajaya'];
+const STATES_E = ['Sabah','Sarawak','W.P. Labuan'];
+const BANKS = ['Maybank2u','CIMB Clicks','Public Bank','RHB Now','Hong Leong Connect','AmOnline','Bank Islam','Bank Rakyat','BSN','Affin Bank'];
+const WALLETS = [['tng','Touch ’n Go eWallet'],['grab','GrabPay'],['boost','Boost'],['shopee','ShopeePay']];
+const isEast = () => STATES_E.includes(co.details.state);
+function shipOptions(){
+  const st = subtotal();
+  if (!co.details.state) return [];
+  const free = st >= FREE_OVER, east = isEast();
+  return [
+    {id:'std', name:'Standard delivery', eta: east?'4–7 working days':'2–4 working days', price: free?0:8, was: free?8:null},
+    {id:'exp', name:'Express delivery', eta: east?'2–3 working days':'1–2 working days', price:15}];
+}
+function totals(){
+  const st = subtotal();
+  const so = shipOptions().find(s=>s.id===co.ship);
+  const ship = so ? so.price : null;
+  const disc = co.promo ? Math.round(st*co.promo.pct)/100 : 0;
+  return {st, ship, disc, total: st - disc + (ship||0)};
+}
+function openCheckout(){ if(!cart.length) return; closeLayer(); $('#toast').classList.remove('on'); co.step = 1; $('#checkout').classList.add('open'); document.body.style.overflow='hidden'; renderCO(); }
+function closeCheckout(){ $('#checkout').classList.remove('open'); document.body.style.overflow=''; if (co.order){ co.order=null; co.step=0; co.promo=null; co.ship=null; } }
+$('#coClose').addEventListener('click', closeCheckout);
+$('#coLogo').addEventListener('click', e=>{ closeCheckout(); });
+
+function summaryHTML(px){
+  const t = totals();
+  return `
+    ${cart.map(l=>{const x=lineOf(l);return `<div class="mini"><img src="${imgOf(x.p,x.vv)}" alt=""><div><b>${esc(x.p.name)}</b><span>${esc(x.vv.label)} × ${l.qty}</span></div><span class="tnum">${RM(x.vv.price*l.qty)}</span></div>`;}).join('')}
+    <div class="promo"><label class="sr" for="promoIn-${px}">Discount code</label><input id="promoIn-${px}" placeholder="Discount code" value="${co.promo?esc(co.promo.code):''}"><button class="btn btn-ghost btn-sm" data-promo>Apply</button></div>
+    <div class="promo-msg">${co.promo?`<span style="color:var(--ok)">${esc(co.promo.code)} applied: ${co.promo.pct}% off</span>`:'<span class="hint">Try GLOW10 in this preview</span>'}</div>
+    <div class="sumrow"><span>Subtotal</span><span class="tnum">${RM(t.st)}</span></div>
+    ${t.disc?`<div class="sumrow" style="color:var(--ok)"><span>Discount</span><span class="tnum">− ${RM(t.disc)}</span></div>`:''}
+    <div class="sumrow"><span>Shipping</span><span class="tnum">${t.ship===null?'<span class="hint">Next step</span>':t.ship===0?'Free':RM(t.ship)}</span></div>
+    <div class="sumrow total"><span>Total</span><span class="tnum">${RM(t.total)}</span></div>`;
+}
+function stepperHTML(){
+  return STEPS.map((s,i)=>`<li class="${i<co.step?'done':i===co.step?'cur':''}">${s}</li>`).join('');
+}
+function field(id,label,opts={}){
+  const v = co.details[id]||'';
+  if (opts.select) return `<div class="field ${opts.full?'full':''}" data-f="${id}"><label for="f-${id}">${label}</label><select id="f-${id}" name="${id}"><option value="">Select state</option><optgroup label="Peninsular Malaysia">${STATES_W.map(s=>`<option ${s===v?'selected':''}>${s}</option>`).join('')}</optgroup><optgroup label="East Malaysia">${STATES_E.map(s=>`<option ${s===v?'selected':''}>${s}</option>`).join('')}</optgroup></select><span class="err"></span></div>`;
+  return `<div class="field ${opts.full?'full':''}" data-f="${id}"><label for="f-${id}">${label}</label><input id="f-${id}" name="${id}" value="${esc(v)}" ${opts.type?`type="${opts.type}"`:''} ${opts.ac?`autocomplete="${opts.ac}"`:''} ${opts.im?`inputmode="${opts.im}"`:''} ${opts.ph?`placeholder="${opts.ph}"`:''}>${opts.hint?`<span class="hint">${opts.hint}</span>`:''}<span class="err"></span></div>`;
+}
+function renderCO(){
+  $('#stepper').innerHTML = stepperHTML();
+  $('#stepper').hidden = !!co.order;
+  if (co.order) return renderConfirm();
+  let main = '';
+  const t = totals();
+  if (co.step===1){
+    main = `<h2>Delivery details</h2><p class="sub">No account needed. We’ll send your order updates to this email and phone.</p>
+      <form id="detailsForm" novalidate><div class="fields">
+        ${field('name','Full name',{full:true,ac:'name'})}
+        ${field('email','Email',{type:'email',ac:'email',im:'email'})}
+        ${field('phone','Mobile number',{type:'tel',ac:'tel',im:'tel',ph:'012-345 6789'})}
+        ${field('addr1','Address line 1',{full:true,ac:'address-line1',ph:'House no., street'})}
+        ${field('addr2','Address line 2 (optional)',{full:true,ac:'address-line2',ph:'Apartment, taman, unit'})}
+        ${field('postcode','Postcode',{ac:'postal-code',im:'numeric',ph:'5 digits'})}
+        ${field('city','City / town',{ac:'address-level2'})}
+        ${field('state','State',{select:true,full:true})}
+      </div>
+      <label class="choice" style="margin-top:16px"><input type="checkbox" id="optin" checked><span class="c-main"><b>Email me routine tips and offers</b><span>You can unsubscribe at any time.</span></span></label>
+      </form>
+      <div class="co-actions"><button class="btn btn-ghost" data-co="back">Back</button><button class="btn btn-primary" data-co="next">Continue to shipping</button></div>`;
+  }
+  if (co.step===2){
+    const opts = shipOptions();
+    if (!opts.find(o=>o.id===co.ship)) co.ship = opts[0]?.id || null;
+    main = `<h2>Shipping method</h2><p class="sub">Delivering to ${esc(co.details.city)}, ${esc(co.details.state)} ${esc(co.details.postcode)}. <button class="link-btn" data-co="edit1">Change</button></p>
+      ${opts.map(o=>`<label class="choice"><input type="radio" name="ship" value="${o.id}" ${o.id===co.ship?'checked':''}><span class="c-main"><b>${o.name}</b><span>${o.eta} · tracking included</span></span><span class="c-price tnum">${o.price===0?`Free${o.was?` <s class="hint">${RM(o.was)}</s>`:''}`:RM(o.price)}</span></label>`).join('')}
+      <p class="hint">Free standard delivery on orders of RM 50 and above. Delivery times are estimates${isEast()?' for Sabah, Sarawak and Labuan':''}.</p>
+      <div class="co-actions"><button class="btn btn-ghost" data-co="back">Back</button><button class="btn btn-primary" data-co="next">Continue to payment</button></div>`;
+  }
+  if (co.step===3){
+    main = `<h2>Payment method</h2><p class="sub">You’ll complete payment on our payment provider’s secure page. We never see or store your card details.</p>
+      <label class="choice"><input type="radio" name="pay" value="fpx" ${co.pay==='fpx'?'checked':''}><span class="c-main"><b>FPX online banking</b><span>Pay directly from your Malaysian bank account</span></span></label>
+      <div class="sub-opts"><div class="field"><label for="bank">Choose your bank</label><select id="bank"><option value="">Select bank</option>${BANKS.map(b=>`<option ${b===co.bank?'selected':''}>${b}</option>`).join('')}</select><span class="err" id="bankErr"></span></div></div>
+      <label class="choice"><input type="radio" name="pay" value="card" ${co.pay==='card'?'checked':''}><span class="c-main"><b>Debit or credit card</b><span>Visa, Mastercard · 3-D Secure</span></span></label>
+      <div class="sub-opts"><p class="hint">You’ll enter your card details on the secure payment page after placing the order.</p></div>
+      <label class="choice"><input type="radio" name="pay" value="wallet" ${co.pay==='wallet'?'checked':''}><span class="c-main"><b>E-wallet</b><span>Scan or log in to pay</span></span></label>
+      <div class="sub-opts"><div class="wallets" role="radiogroup" aria-label="E-wallet">${WALLETS.map(([k,n])=>`<label><input type="radio" name="wallet" value="${k}" ${co.wallet===k?'checked':''}>${n}</label>`).join('')}</div></div>
+      <div class="co-actions"><button class="btn btn-ghost" data-co="back">Back</button><button class="btn btn-primary" data-co="next">Review order</button></div>`;
+  }
+  if (co.step===4){
+    const d=co.details, so=shipOptions().find(s=>s.id===co.ship);
+    const payTxt = co.pay==='fpx'?`FPX online banking · ${esc(co.bank)}`:co.pay==='card'?'Debit or credit card':`E-wallet · ${WALLETS.find(w=>w[0]===co.wallet)[1]}`;
+    main = `<h2>Review your order</h2><p class="sub">Check everything once. You can still change any part.</p>
+      <div class="review-block"><div><span class="label">Products</span>${cart.map(l=>{const x=lineOf(l);return `<p>${esc(x.p.name)} · ${esc(x.vv.label)} × ${l.qty} <span class="tnum">— ${RM(x.vv.price*l.qty)}</span></p>`;}).join('')}</div><button class="link-btn" data-co="cart">Edit</button></div>
+      <div class="review-block"><div><span class="label">Deliver to</span><p>${esc(d.name)}<br>${esc(d.addr1)}${d.addr2?', '+esc(d.addr2):''}<br>${esc(d.postcode)} ${esc(d.city)}, ${esc(d.state)}<br>${esc(d.email)} · ${esc(d.phone)}</p></div><button class="link-btn" data-co="edit1">Edit</button></div>
+      <div class="review-block"><div><span class="label">Shipping</span><p>${so.name} · ${so.eta} · ${so.price===0?'Free':RM(so.price)}</p></div><button class="link-btn" data-co="edit2">Edit</button></div>
+      <div class="review-block"><div><span class="label">Payment</span><p>${payTxt}</p></div><button class="link-btn" data-co="edit3">Edit</button></div>
+      <div class="review-block" style="background:var(--ivory)"><div style="width:100%;display:grid;gap:6px">
+        <div class="sumrow"><span>Subtotal</span><span class="tnum">${RM(t.st)}</span></div>
+        ${t.disc?`<div class="sumrow" style="color:var(--ok)"><span>Discount (${esc(co.promo.code)})</span><span class="tnum">− ${RM(t.disc)}</span></div>`:''}
+        <div class="sumrow"><span>Shipping</span><span class="tnum">${t.ship===0?'Free':RM(t.ship)}</span></div>
+        <div class="sumrow total"><span>Total to pay</span><span class="tnum">${RM(t.total)}</span></div></div></div>
+      <p class="hint">By placing your order you agree to our terms and privacy policy.</p>
+      <div class="co-actions"><button class="btn btn-ghost" data-co="back">Back</button><button class="btn btn-gold" data-co="place">Place order · <span class="tnum">${RM(t.total)}</span></button></div>`;
+  }
+  $('#coView').innerHTML = `<div class="co-grid"><div class="co-main">
+      <details class="mobile-sum"><summary><span>Order summary</span><span class="tnum">${RM(t.total)}</span></summary><div class="ms-body">${summaryHTML('m')}</div></details>
+      ${main}</div><aside class="co-side"><h3>Order summary</h3>${summaryHTML('d')}</aside></div>`;
+  $('#checkout').scrollTop = 0;
+}
+function readDetails(){
+  const f=$('#detailsForm'); if(!f) return;
+  ['name','email','phone','addr1','addr2','postcode','city','state'].forEach(k=>{ const el=f.querySelector(`[name="${k}"]`); if(el) co.details[k]=el.value.trim(); });
+}
+function validateDetails(){
+  readDetails();
+  const d=co.details, errs={};
+  if (d.name.length<2) errs.name='Enter the recipient’s full name.';
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) errs.email='Enter an email like name@example.com.';
+  if (!/^(\+?6?0)?1\d[-\s]?\d{3,4}[-\s]?\d{4}$/.test(d.phone.replace(/\s+/g,' '))) errs.phone='Enter a Malaysian mobile number, e.g. 012-345 6789.';
+  if (d.addr1.length<4) errs.addr1='Enter your street address.';
+  if (!/^\d{5}$/.test(d.postcode)) errs.postcode='Postcodes in Malaysia have 5 digits.';
+  if (d.city.length<2) errs.city='Enter your city or town.';
+  if (!d.state) errs.state='Choose your state so we can show shipping options.';
+  $$('#detailsForm .field').forEach(el=>{ const k=el.dataset.f; el.classList.toggle('bad',!!errs[k]); el.querySelector('.err').textContent=errs[k]||''; });
+  const first = Object.keys(errs)[0]; if(first) $('#f-'+first).focus();
+  return !first;
+}
+$('#coView').addEventListener('input', e=>{ if (e.target.closest('#detailsForm')) readDetails(); });
+$('#coView').addEventListener('change', e=>{
+  const t=e.target;
+  if (t.name==='ship'){ co.ship=t.value; renderCO(); }
+  if (t.name==='pay'){ co.pay=t.value; }
+  if (t.name==='wallet'){ co.wallet=t.value; }
+  if (t.id==='bank'){ co.bank=t.value; $('#bankErr').textContent=''; }
+});
+$('#coView').addEventListener('click', e=>{
+  const t=e.target.closest('button'); if(!t) return;
+  if ('promo' in t.dataset){
+    const inp = t.parentElement.querySelector('input'); const code = inp.value.trim().toUpperCase();
+    if (code==='GLOW10'){ co.promo={code,pct:10}; renderCO(); }
+    else { co.promo=null; t.closest('div').nextElementSibling.innerHTML = `<span style="color:var(--err)">${code?'That code isn’t valid. Check the spelling and try again.':'Enter a code first.'}</span>`; }
+    return;
+  }
+  const a = t.dataset.co; if(!a) return;
+  if (a==='back'){ if(co.step===1){ closeCheckout(); openLayer($('#cart')); } else { co.step--; renderCO(); } }
+  if (a==='next'){
+    if (co.step===1 && !validateDetails()) return;
+    if (co.step===3 && co.pay==='fpx' && !co.bank){ $('#bankErr').textContent='Choose your bank to continue.'; $('#bank').focus(); return; }
+    co.step++; renderCO();
+  }
+  if (a==='edit1'){ co.step=1; renderCO(); }
+  if (a==='edit2'){ co.step=2; renderCO(); }
+  if (a==='edit3'){ co.step=3; renderCO(); }
+  if (a==='cart'){ closeCheckout(); openLayer($('#cart')); }
+  if (a==='place'){
+    t.disabled = true; t.textContent = 'Processing payment…';
+    setTimeout(()=>{
+      const n = 'HG-' + new Date().getFullYear().toString().slice(2) + String(Math.floor(100000+Math.random()*899999));
+      co.order = {no:n, items:cart.map(l=>({...l})), t:totals(), email:co.details.email, ship:shipOptions().find(s=>s.id===co.ship)};
+      cart=[]; saveCart(); renderCart(); co.step=5; renderCO();
+    }, 1200);
+  }
+});
+function renderConfirm(){
+  const o = co.order;
+  $('#coView').innerHTML = `<div class="confirm">
+    <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></div>
+    <div class="eyebrow">Order confirmed · preview</div>
+    <h2>Thank you, ${esc(co.details.name.split(' ')[0]||'')}. Your order is in.</h2>
+    <div class="ordno tnum">${o.no}</div>
+    <p class="lede" style="text-align:center">A confirmation goes to <b>${esc(o.email)}</b>. When your parcel ships, we’ll email and SMS a tracking link.</p>
+    <div class="track"><div class="on"><i></i>Order placed</div><div><i></i>Packed</div><div><i></i>Shipped</div><div><i></i>Delivered</div></div>
+    <div class="co-side" style="position:static;width:100%;text-align:left;display:grid">
+      ${o.items.map(l=>{const x=lineOf(l);return `<div class="mini"><img src="${imgOf(x.p,x.vv)}" alt=""><div><b>${esc(x.p.name)}</b><span>${esc(x.vv.label)} × ${l.qty}</span></div><span class="tnum">${RM(x.vv.price*l.qty)}</span></div>`;}).join('')}
+      <div class="sumrow"><span>Subtotal</span><span class="tnum">${RM(o.t.st)}</span></div>
+      ${o.t.disc?`<div class="sumrow" style="color:var(--ok)"><span>Discount</span><span class="tnum">− ${RM(o.t.disc)}</span></div>`:''}
+      <div class="sumrow"><span>${esc(o.ship.name)}</span><span class="tnum">${o.t.ship===0?'Free':RM(o.t.ship)}</span></div>
+      <div class="sumrow total"><span>Paid</span><span class="tnum">${RM(o.t.total)}</span></div>
+    </div>
+    <button class="btn btn-primary" id="coDone">Continue shopping</button>
+  </div>`;
+  $('#checkout').scrollTop = 0;
+  $('#coDone').addEventListener('click', ()=>{ closeCheckout(); document.getElementById('shop').scrollIntoView(); });
+}
+
+/* ---------- chat ---------- */
+const CHAT_QUICK = ['Which shampoo suits me?','I have hair fall','How much is shipping?','How do I use the oil?','Is it safe for coloured hair?'];
+let chatStarted=false;
+function now(){ return new Date().toLocaleTimeString('en-MY',{hour:'numeric',minute:'2-digit'}); }
+function addMsg(who, html){ const m=document.createElement('div'); m.className='msg '+who; m.innerHTML=html+`<small>${now()}</small>`; $('#msgs').appendChild(m); $('#msgs').scrollTop=1e6; }
+function reply(text){
+  const q=text.toLowerCase();
+  let a='Thanks for your message. A member of our team will reply here shortly. Meanwhile, the <b>scalp quiz</b> can suggest a routine in a minute, or WhatsApp us at <b>+60 10-360 5970</b>.';
+  if (/fall|gugur|thin|botak/.test(q)) a='For hair fall, most customers use the <b>Herbal Shampoo</b> (or <b>Clarifying</b> if your scalp gets oily quickly), <b>Herbal Hair Oil</b> twice a week, and the <b>Hair Growth Serum</b> daily. The <b>Full Hair Care Set</b> has it all at RM 150. Give it a few weeks of regular use.';
+  else if (/shampoo|suit|which|choose|scalp/.test(q)) a='Quick check: the day after washing, is your scalp oily again or waxy with build-up? → <b>Clarifying Herbal Shampoo</b>. Comfortable, dry or tight? → <b>Herbal Shampoo</b>.';
+  else if (/ship|deliver|sabah|sarawak|post|courier/.test(q)) a='Standard delivery is RM 8 and express is RM 15, anywhere in Malaysia. Standard delivery is <b>free on orders of RM 50 and above</b>.';
+  else if (/oil|minyak/.test(q)) a='Apply <b>Herbal Hair Oil</b> on dry hair and massage the scalp and ends for 5–10 minutes. Leave 2–3 hours, then wash with our herbal shampoo. Twice a week is best. With asthma, migraine or sinus sensitivity, leave it no more than 15 minutes. <b>Gold Oil</b> is different: 2–3 drops on the ends only.';
+  else if (/colou?r|bleach|dye|keratin/.test(q)) a='Yes. Our shampoos are sulfate-free, and <b>Gold Oil</b> is safe for daily use on colour-treated hair. Follow with <b>Hi-Flex Conditioner</b>.';
+  else if (/price|harga|rm|cost|promo|discount/.test(q)) a='Launch prices: shampoos from RM 35, conditioner from RM 37, hair oil from RM 10, Gold Oil from RM 10, serum from RM 31, sets from RM 52. Standard delivery is free from RM 50.';
+  const ty=document.createElement('div'); ty.className='typing'; ty.innerHTML='<i></i><i></i><i></i>'; $('#msgs').appendChild(ty); $('#msgs').scrollTop=1e6;
+  setTimeout(()=>{ ty.remove(); addMsg('them', a); }, 1100);
+}
+function toggleChat(on){
+  const c=$('#chat'); const open = on ?? !c.classList.contains('open');
+  c.classList.toggle('open', open);
+  if (open && !chatStarted){ chatStarted=true;
+    addMsg('them','Hi! 👋 Welcome to HerbaGlow. Ask us anything about your hair, scalp or an order. We’re happy to help you choose.');
+    $('#quick').innerHTML = CHAT_QUICK.map(q=>`<button>${q}</button>`).join('');
+  }
+  if (open) setTimeout(()=>$('#chatInput').focus(),200);
+}
+$('#chatFab').addEventListener('click',()=>toggleChat());
+$('#chatClose').addEventListener('click',()=>toggleChat(false));
+$('#openChat2').addEventListener('click',()=>toggleChat(true));
+$('#quick').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; addMsg('me',esc(b.textContent)); reply(b.textContent); });
+$('#chatForm').addEventListener('submit',e=>{ e.preventDefault(); const v=$('#chatInput').value.trim(); if(!v) return; addMsg('me',esc(v)); $('#chatInput').value=''; reply(v); });
+
+/* ---------- global clicks ---------- */
+document.addEventListener('click', e=>{
+  const t = e.target.closest('[data-cardv],[data-addv],[data-quiz],[data-open],[data-add],[data-need],[data-herb],[data-ba],[data-scalp],[data-close],#toCheckout,#toastView,[data-chat]');
+  if (!t) return;
+  if (t.matches('[data-cardv]')){ const [id,i]=t.dataset.cardv.split(':'); cardV[id]=+i; renderGrid(); $(`[data-cardv="${id}:${i}"]`).focus(); return; }
+  if (t.matches('[data-addv]')){ const [id,i]=t.dataset.addv.split(':'); addToCart(id,+i); return; }
+  if (t.matches('[data-quiz]')){ e.preventDefault(); $('#navLinks').classList.remove('open'); openQuiz(); }
+  else if (t.matches('[data-scalp]')) openQuiz(t.dataset.scalp);
+  else if (t.matches('[data-open]') && !t.closest('#qvCard')) openQV(t.dataset.open);
+  else if (t.matches('[data-add]')) addToCart(t.dataset.add);
+  else if (t.matches('[data-need]')){ filter=t.dataset.need; renderChips(); renderGrid(); }
+  else if (t.matches('[data-herb]')){ herb=t.dataset.herb; renderAtlas(); $(`[data-herb="${herb}"]`).focus(); }
+  else if (t.matches('[data-ba]')) openLB(+t.dataset.ba);
+  else if (t.matches('[data-close]')){ closeLayer(); if (t.dataset.goshop!==undefined) $('#shop').scrollIntoView({behavior:'smooth'}); }
+  else if (t.id==='toCheckout') openCheckout();
+  else if (t.id==='toastView'){ $('#toast').classList.remove('on'); openLayer($('#cart')); }
+  else if (t.matches('[data-chat]')){ closeLayer(); toggleChat(true); }
+});
+$('#cartBtn').addEventListener('click',()=>openLayer($('#cart')));
+$('#menuBtn').addEventListener('click',()=>{ const n=$('#navLinks'); n.classList.toggle('open'); $('#menuBtn').setAttribute('aria-expanded', n.classList.contains('open')); });
+$$('#navLinks a').forEach(a=>a.addEventListener('click',()=>$('#navLinks').classList.remove('open')));
+
+/* film control */
+const film=$('#film');
+$('#filmCtrl').addEventListener('click',()=>{
+  if (film.paused){ film.play(); $('#filmIcon').innerHTML='<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>'; $('#filmCtrl').setAttribute('aria-label','Pause film'); }
+  else { film.pause(); $('#filmIcon').innerHTML='<path d="M7 5v14l12-7z"/>'; $('#filmCtrl').setAttribute('aria-label','Play film'); }
+});
+if (matchMedia('(prefers-reduced-motion: reduce)').matches){ film.removeAttribute('autoplay'); film.pause(); $('#filmIcon').innerHTML='<path d="M7 5v14l12-7z"/>'; }
+</script>
+
+</body>
+</html>
